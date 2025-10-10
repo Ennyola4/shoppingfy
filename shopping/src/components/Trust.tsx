@@ -16,7 +16,7 @@ const Trust = () => {
                     {/* Right Column - Content */}
                     <div className="flex-1">
 
-                        <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                        <h3 className="text-lg font-bold text-[#002366] mb-2">
                             {item.title}
                         </h3>
                         <p className="text-gray-600 mb-3">
@@ -61,7 +61,7 @@ const Trust = () => {
 
                         {item.badge && (
                             <div className="mt-3 flex justify-center md:justify-start">
-                                <span className={`${item.bgColor} flex px-3 py-1 border text-xs font-medium rounded-full ${item.textColor}`}>
+                                <span className={`${item.bgColor} flex px-3 py-1  text-xs font-medium rounded-full ${item.textColor}`}>
                                     <item.icon className={`${item.textColor}inline-block items-center mr-1`} size={13} />
                                     {item.badge}
                                 </span>

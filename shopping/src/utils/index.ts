@@ -4,7 +4,7 @@ export const products = [
   {
     id: 1,
     name: "Smart Fitness Watch",
-    price: "25000",
+    price: "250,000",
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
     bgColor: "#fdf2f2",
@@ -18,7 +18,7 @@ export const products = [
   {
     id: 2,
     name: "Wireless Noise-Canceling Headphones",
-    price: "32000",
+    price: "65,000",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD2-5rGUTfacv3kcNhx44DT9zjliNWWzf8bA&s",
     bgColor: "#f0f9ff",
@@ -32,7 +32,7 @@ export const products = [
   {
     id: 3,
     name: "Leather Handbag",
-    price: "18000",
+    price: "180,000",
     image:
       "https://www.cartrollers.com/wp-content/uploads/2025/01/CLASSIC-DESIGNERS-LEATHER-HANDBAG1.jpeg",
     bgColor: "#fff7ed",
@@ -46,7 +46,7 @@ export const products = [
   {
     id: 4,
     name: "Wireless Bluetooth Speaker",
-    price: "15000",
+    price: "75,000",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKuZXB6Lo8az377-tfCDGLJvQAqxpdRRr1HQ&s",
     bgColor: "#eef2ff",
@@ -60,7 +60,7 @@ export const products = [
   {
     id: 5,
     name: "Men’s Casual Sneakers",
-    price: "22000",
+    price: "45,000",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6SOVXEDg9Iz2JR8jlh-7Wy1HuJChlBwV6Og&s",
     bgColor: "#fef2f2",
@@ -74,7 +74,7 @@ export const products = [
   {
     id: 6,
     name: "Smartphone Tripod Stand",
-    price: "9500",
+    price: "9,500",
     image:
       "https://www.moft.us/cdn/shop/files/tripod_stand2_7338c934-17fe-443c-9007-9f60b97b6ad7.png?v=1751898839&width=1090",
     bgColor: "#f0fdfa",
@@ -88,7 +88,7 @@ export const products = [
   {
     id: 7,
     name: "Wireless Keyboard & Mouse Combo",
-    price: "17000",
+    price: "55,000",
     image:
       "https://cdn-shop.adafruit.com/970x728/1738-03.jpg",
     bgColor: "#faf5ff",
@@ -102,14 +102,14 @@ export const products = [
   {
     id: 8,
     name: "Scented Candle Gift Set",
-    price: "12500",
+    price: "12,500",
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
     bgColor: "#fff1f2",
-    status: "In Stock",
+    status: "Limited",
     category: "Home Decor",
-    rating: 4.9,
-    reviews: 203,
+    rating: 4.3,
+    reviews: 70,
     description:
       "Aromatherapy candle set with calming natural scents to relax your body and refresh your space.",
   },
@@ -126,8 +126,8 @@ export const trust = [
     reviewCount: 124,
     details: ["2-3 day delivery", "Free returns", "Track your order"],
     badge: "Most Popular",
-    bgColor : "bg-red-500/20",
-    textColor : "text-red-500"
+    bgColor : "bg-red-500/10",
+    textColor : "text-red-600"
   },
   {
     icon: ShieldCheckIcon,
@@ -137,8 +137,8 @@ export const trust = [
     reviewCount: 89,
     details: ["256-bit encryption", "PCI compliant", "Money-back guarantee"],
     badge: "Verified",
-     bgColor : "bg-green-500/20",
-    textColor : "text-green-500"
+     bgColor : "bg-green-500/10",
+    textColor : "text-green-600"
   },
   {
     icon: StarIcon,
@@ -148,8 +148,8 @@ export const trust = [
     reviewCount: 2150,
     details: ["500+ 5-star reviews", "Customer choice 2024", "Verified purchases"],
     badge: "Award Winning",
-     bgColor : "bg-yellow-500/20",
-    textColor : "text-yellow-500"
+     bgColor : "bg-yellow-500/10",
+    textColor : "text-yellow-600"
   }
   
 ];

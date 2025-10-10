@@ -7,7 +7,7 @@ const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
 
     return (
-        <section className="py-14 px-5 sm:px-8 md:px-12 lg:px-20 bg-gray-50 font-serif">
+        <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20 bg-gray-50 font-serif">
             {/* Header */}
             <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -17,9 +17,15 @@ const Products = () => {
             >
                 Featured Products
             </motion.h1>
+            <p className="text-gray-500 text-center font-medium max-w-2xl mx-auto px-4 mb-10">
+                We're here to simplify your search for the perfect items that define
+                your life. Our team is dedicated to finding the best in modern
+                fashion, innovative gadgets, and timeless lifestyle essentials—all in
+                one place.
+            </p>
 
             {/* Products Grid */}
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                 {products.map((product, index) => (
                     <motion.div
                         key={product.id}
@@ -27,7 +33,7 @@ const Products = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                         whileHover={{ y: -6 }}
-                        className="relative w-full max-w-[350px] bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                        className="relative w-full max-w-[350px] bg-white rounded-xl shadow-md overflow-hidden  cursor-pointer"
                         onClick={() => setSelectedProduct(product)}
                     >
                         {/* Image */}
@@ -59,8 +65,8 @@ const Products = () => {
                                     <Star
                                         key={i}
                                         className={`w-4 h-4 ${i < Math.round(product.rating || 4)
-                                                ? "text-yellow-400 fill-yellow-400"
-                                                : "text-gray-300"
+                                            ? "text-yellow-400 fill-yellow-400"
+                                            : "text-gray-300"
                                             }`}
                                     />
                                 ))}
@@ -75,8 +81,8 @@ const Products = () => {
                                 </span>
                                 <span
                                     className={`text-xs font-semibold ${product.status === "In Stock"
-                                            ? "text-green-500"
-                                            : "text-red-400"
+                                        ? "text-green-500"
+                                        : "text-red-400"
                                         }`}
                                 >
                                     {product.status || "In Stock"}
@@ -116,7 +122,7 @@ const Products = () => {
                             {/* Close Button */}
                             <button
                                 onClick={() => setSelectedProduct(null)}
-                                className="absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-1 transition"
+                                className="absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-1 transition cursor-pointer"
                             >
                                 <X size={20} />
                             </button>
@@ -144,8 +150,8 @@ const Products = () => {
                                         <Star
                                             key={i}
                                             className={`w-4 h-4 ${i < Math.round(selectedProduct.rating || 4)
-                                                    ? "text-yellow-400 fill-yellow-400"
-                                                    : "text-gray-300"
+                                                ? "text-yellow-400 fill-yellow-400"
+                                                : "text-gray-300"
                                                 }`}
                                         />
                                     ))}
@@ -160,8 +166,8 @@ const Products = () => {
                                     </span>
                                     <span
                                         className={`text-sm font-semibold ${selectedProduct.status === "In Stock"
-                                                ? "text-green-500"
-                                                : "text-red-400"
+                                            ? "text-green-500"
+                                            : "text-red-400"
                                             }`}
                                     >
                                         {selectedProduct.status || "In Stock"}
@@ -172,7 +178,7 @@ const Products = () => {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="flex-1 flex items-center justify-center gap-2 bg-[#C08081] text-white py-2 rounded-md font-medium hover:bg-[#a06a6b] transition"
+                                        className="flex-1 flex items-center justify-center gap-2 bg-[#C08081] text-white py-2 rounded-md font-medium hover:bg-[#a06a6b] transition cursor-pointer"
                                     >
                                         <ShoppingCart className="w-4 h-4" />
                                         Add to Cart
@@ -180,7 +186,7 @@ const Products = () => {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="flex-1 flex items-center justify-center gap-2 border border-[#C08081] text-[#C08081] py-2 rounded-md font-medium hover:bg-[#C08081] hover:text-white transition"
+                                        className="flex-1 flex items-center justify-center gap-2 border border-[#C08081] text-[#C08081] py-2 rounded-md font-medium hover:bg-[#C08081] hover:text-white transition cursor-pointer"
                                     >
                                         Buy Now
                                     </motion.button>
@@ -211,16 +217,16 @@ const Products = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8">
                     {[
-                        { label: "Products", value: "500+" },
-                        { label: "Happy Customers", value: "10K+" },
-                        { label: "Average Rating", value: "4.9" },
-                        { label: "Countries", value: "50+" },
+                        { label: "Products", value: "500+", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
+                        { label: "Happy Customers", value: "10k+",bgColor:"bg-[#002366]/20", textColor: "text-[#002366]"},
+                        { label: "Average Rating", value: "4.9", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
+                        { label: "Countries", value: "50+", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
                     ].map((item) => (
-                        <div key={item.label} className="text-center">
-                            <h1 className="text-4xl md:text-5xl font-bold text-[#002366]">
+                        <div key={item.label} className={`text-center ${item.bgColor} shadow-md rounded-md p-2 ${item.textColor}`}>
+                            <h1 className={"text-4xl md:text-5xl font-bold"}>
                                 {item.value}
                             </h1>
-                            <p className="text-sm md:text-base text-gray-500 font-semibold mt-1">
+                            <p className=" text-sm md:text-base text-gray-500 font-semibold mt-1">
                                 {item.label}
                             </p>
                         </div>

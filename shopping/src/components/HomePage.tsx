@@ -40,7 +40,7 @@ const HomePage = () => {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 space-y-4 md:space-y-6"
                 >
-                    <div className="flex flex-wrap justify-center lg:justify-start font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md leading-tight">
+                    <div className="flex flex-wrap justify-center lg:justify-start font-serif text-2xl sm:text-xl lg:text-3xl font-bold text-white drop-shadow-md leading-tight">
                         {titleText.split("").map((char, i) => (
                             <motion.span
                                 key={i}
