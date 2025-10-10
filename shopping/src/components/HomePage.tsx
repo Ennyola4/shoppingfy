@@ -23,7 +23,7 @@ const HomePage = () => {
 
     return (
         <div
-            className="relative bg-fixed h-[63vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
+            className="relative h-[63vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
             style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80')",
