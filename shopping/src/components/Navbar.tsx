@@ -49,7 +49,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full top-0 z-50 transition-all font-serif duration-300 ${scrolled ? "backdrop-blur-lg bg-[#C08081]/60 shadow-md" : ""
+            className={`fixed w-full top-0 z-50 transition-all font-serif duration-300 ${scrolled ? "bg-[#C08081]/80 shadow-md" : ""
                 } text-white`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,29 +133,28 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Animated Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Overlay backdrop */}
+                        {/* Dim background overlay */}
                         <motion.div
-                            key="overlay"
+                            key="overlay" // ✅ unique key here
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.5 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="fixed inset-0 bg-black z-40 md:hidden"
-                            onClick={() => setIsOpen(false)} // close menu when clicked outside
-                        ></motion.div>
+                            className="fixed inset-0 bg-black z-[50]"
+                            onClick={() => setIsOpen(false)} // closes menu when you click outside
+                        />
 
                         {/* Slide-out menu */}
                         <motion.div
-                            key="mobileMenu"
+                            key="slideMenu" // ✅ changed key name here
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", stiffness: 100, damping: 18 }}
-                            className="fixed inset-y-0 right-0 w-64 bg-[#C08081] text-white shadow-xl md:hidden flex flex-col p-6 space-y-6 z-50"
+                            className="fixed inset-y-0 right-0 w-64 bg-[#C08081] text-white shadow-xl md:hidden flex flex-col p-6 space-y-6 z-[60]"
                         >
                             {/* Header with close */}
                             <div className="flex justify-between items-center">
@@ -179,7 +178,6 @@ const Navbar = () => {
                                 ))}
                             </div>
 
-                            {/* Quick actions */}
                             <div className="border-t border-white/20 pt-5 space-y-4 text-sm">
                                 <motion.div whileHover={{ x: 4 }} className="flex items-center gap-3 cursor-pointer">
                                     <User size={18} /> Profile
@@ -192,15 +190,15 @@ const Navbar = () => {
                                 </motion.div>
                             </div>
 
-                            {/* Footer section */}
                             <div className="mt-auto pt-4 border-t border-white/10 text-xs text-center text-gray-200">
                                 © {new Date().getFullYear()} Shoppingfy
-                                <br /> Shop Smart, Live Stylish.
+                                <br />Shop Smart, Live Stylish.
                             </div>
                         </motion.div>
                     </>
                 )}
             </AnimatePresence>
+
 
         </nav>
     );
