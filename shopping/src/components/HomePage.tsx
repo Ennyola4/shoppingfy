@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 
-import { House, ShoppingBag, Tablet } from "lucide-react";
+import {  ShoppingBag, Tablet } from "lucide-react";
 
 const HomePage = () => {
     // Text to animate
@@ -76,13 +76,7 @@ const HomePage = () => {
                             Explore Gadget
                         </button>
 
-                         <button
-                            
-                            className="mt-2 px-5 py-2 sm:px-6 cursor-pointer sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500"
-                        >
-                            <House className="inline items-center mr-2  hover:text-gray-800 " size={16} />
-                            Discover more
-                        </button>
+                        
                         
                     </div>
                 </motion.div>
