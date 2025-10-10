@@ -19,7 +19,7 @@ const Products = () => {
             </motion.h1>
 
             {/* Products Grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                 {products.map((product, index) => (
                     <motion.div
                         key={product.id}
@@ -27,7 +27,7 @@ const Products = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                         whileHover={{ y: -6 }}
-                        className="relative w-full max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                        className="relative w-full max-w-[350px] bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                         onClick={() => setSelectedProduct(product)}
                     >
                         {/* Image */}
