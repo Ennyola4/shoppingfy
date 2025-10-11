@@ -41,7 +41,7 @@ const HomePage = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-[63vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden">
+    <div className="relative h-[61vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
