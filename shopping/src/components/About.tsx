@@ -22,14 +22,14 @@ const About = () => {
   return (
     <div>
       <div
-        className="relative h-[63vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
+        className="relative h-[65vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Content */}
         <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl gap-8 md:gap-14 z-10">

@@ -6,13 +6,13 @@ const Trust = () => {
             {trust.map((item, index) => (
                 <div
                     key={index}
-                    className="flex flex-col md:flex-row items-center text-center md:text-left p-4 rounded-lg shadow-sm bg-[#C08081]/10 text-white"
+                    className="flex flex-col md:flex-row items-center text-center md:text-left p-4 rounded-lg shadow-sm bg-[#C08081]/10"
                 >
 
 
-                    {/* <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                    <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
                         <item.icon className="text-[#C08081] p-3" size={58} />
-                    </div> */}
+                    </div>
                     {/* Right Column - Content */}
                     <div className="flex-1">
 

@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import fashion from "../assets/images/fashion.jpg";
 import gadget from "../assets/images/gadget.jpg";
-import { SkipForward } from "lucide-react";
+import { SkipForward, Shirt, Smartphone } from "lucide-react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -11,14 +11,14 @@ const fadeUp: Variants = {
     transition: {
       delay: i * 0.2,
       duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1], // ✅ Correct format
+      ease: [0.25, 0.1, 0.25, 1],
     },
   }),
 };
 
 const Categories = () => {
   return (
-    <div className="px-4 md:px-10 lg:px-20 bg-gradient-to-b from-white via-gray-50 to-white pb-20">
+    <div className="px-4 md:px-10 lg:px-20 bg-gradient-to-b from-white via-gray-50 to-white pb-10">
       {/* Header */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
@@ -44,7 +44,7 @@ const Categories = () => {
       <div className="flex flex-col lg:flex-row gap-10 justify-center items-center">
         {/* Fashion */}
         <motion.div
-          className="shadow-sm rounded-2xl p-6 max-w-xl bg-white  transition-all duration-500"
+          className="p-4 max-w-xl transition-all duration-500"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -52,7 +52,7 @@ const Categories = () => {
           custom={0}
         >
           <motion.h2
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 0.8 }}
             className="text-3xl p-2 mt-6 font-semibold text-[#0E0C60]"
           >
             Fashion
@@ -70,8 +70,7 @@ const Categories = () => {
 
           <motion.button
             whileHover={{
-              scale: 1.07,
-              boxShadow: "0 0 15px rgba(14, 12, 96, 0.4)",
+              scale: 1.04,
             }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer rounded-md hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center border border-[#0E0C60]"
@@ -80,37 +79,55 @@ const Categories = () => {
             Browse collection
           </motion.button>
 
-          <motion.img
-            src={fashion}
-            alt="Fashion"
-            whileHover={{
-              scale: 1.03,
-              boxShadow: "0 0 25px rgba(14, 12, 96, 0.25)",
-            }}
-            transition={{ duration: 0.4 }}
-            className="rounded-xl w-full h-[25em] cursor-pointer object-cover"
-          />
+          {/* Image with overlay */}
+          <div className="relative">
+            <motion.img
+              src={fashion}
+              alt="Fashion"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 25px rgba(14, 12, 96, 0.25)",
+              }}
+              transition={{ duration: 0.4 }}
+              className=" w-full h-[25em] cursor-pointer object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
+              <Shirt className="text-white w-10 h-10 mb-3" />
+              <p className="text-white text-xl font-semibold tracking-wide">
+                Trendy Styles
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Gadgets */}
         <motion.div
-          className="shadow-lg rounded-2xl p-6 max-w-xl bg-white hover:shadow-2xl transition-all duration-500"
+          className=" p-4 max-w-xl transition-all duration-500"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           custom={1}
         >
-          <motion.img
-            src={gadget}
-            alt="Gadgets"
-            whileHover={{
-              scale: 1.03,
-              boxShadow: "0 0 25px rgba(14, 12, 96, 0.25)",
-            }}
-            transition={{ duration: 0.4 }}
-            className="rounded-xl w-full h-[25em] object-cover"
-          />
+          {/* Image with overlay */}
+          <div className="relative">
+            <motion.img
+              src={gadget}
+              alt="Gadgets"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 25px rgba(14, 12, 96, 0.25)",
+              }}
+              transition={{ duration: 0.4 }}
+              className=" w-full h-[25em] object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
+              <Smartphone className="text-white w-10 h-10 mb-3" />
+              <p className="text-white text-xl font-semibold tracking-wide">
+                Smart Innovations
+              </p>
+            </div>
+          </div>
 
           <motion.h2
             whileHover={{ scale: 1.05 }}
@@ -132,7 +149,6 @@ const Categories = () => {
           <motion.button
             whileHover={{
               scale: 1.07,
-              boxShadow: "0 0 15px rgba(14, 12, 96, 0.4)",
             }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer rounded-md hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 text-center border border-[#0E0C60]"
