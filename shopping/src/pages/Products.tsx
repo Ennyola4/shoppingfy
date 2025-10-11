@@ -7,7 +7,7 @@ const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
 
     return (
-        <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20 bg-gray-50 font-serif">
+        <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20  font-serif">
             {/* Header */}
             <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ const Products = () => {
             </p>
 
             {/* Products Grid */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                 {products.map((product, index) => (
                     <motion.div
                         key={product.id}
@@ -33,7 +33,7 @@ const Products = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                         whileHover={{ y: -6 }}
-                        className="relative w-full max-w-[350px] bg-white rounded-xl shadow-md overflow-hidden  cursor-pointer"
+                        className="relative w-full max-w-[350px] bg-white overflow-hidden  cursor-pointer"
                         onClick={() => setSelectedProduct(product)}
                     >
                         {/* Image */}
@@ -41,7 +41,7 @@ const Products = () => {
                             <motion.img
                                 src={product.image}
                                 alt={product.name}
-                                className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                className="w-full h-56 rounded-lg object-cover transform group-hover:scale-110 transition-transform duration-500"
                             />
                             <span className="absolute top-3 left-3 bg-[#002366] text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
                                 {product.category || "New Arrival"}
@@ -92,7 +92,7 @@ const Products = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full flex items-center justify-center gap-2 mt-3 rounded-md cursor-pointer shadow-sm text-[#C08081] py-2 font-medium border border-[#C08081] hover:bg-[#C08081] hover:text-white transition-all duration-300"
+                                className="w-full flex items-center justify-center gap-2 mt-3 cursor-pointer text-[#C08081] py-2 font-medium border border-[#C08081] hover:bg-[#C08081] hover:text-white transition-all duration-300"
                             >
                                 <ShoppingCart className="w-4 h-4" />
                                 Add to Cart
@@ -217,10 +217,10 @@ const Products = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8">
                     {[
-                        { label: "Products", value: "500+", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
-                        { label: "Happy Customers", value: "10k+",bgColor:"bg-[#002366]/20", textColor: "text-[#002366]"},
-                        { label: "Average Rating", value: "4.9", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
-                        { label: "Countries", value: "50+", bgColor: "bg-[#002366]/20", textColor: "text-[#002366]" },
+                        { label: "Products", value: "500+", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
+                        { label: "Happy Customers", value: "10k+",bgColor:"bg-[#002366]/10", textColor: "text-[#002366]"},
+                        { label: "Average Rating", value: "4.9", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
+                        { label: "Countries", value: "50+", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
                     ].map((item) => (
                         <div key={item.label} className={`text-center ${item.bgColor} shadow-md rounded-md p-2 ${item.textColor}`}>
                             <h1 className={"text-4xl md:text-5xl font-bold"}>

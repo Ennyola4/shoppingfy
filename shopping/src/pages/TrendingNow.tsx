@@ -66,7 +66,7 @@ const TrendingNow = () => {
   const categories = ["All", "Clothing", "Accessories", "Electronics", "Shoes"];
 
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 lg:px-20">
+    <div className="min-h-screen py-16 px-6 md:px-12 ">
       {/* 🔥 HERO CAROUSEL */}
       <div className="mb-16">
         <Swiper
@@ -80,7 +80,7 @@ const TrendingNow = () => {
           }}
           loop={true}
           speed={1200}
-          className="rounded-2xl shadow-lg overflow-hidden"
+          className="rounded-2xl shadow-sm overflow-hidden"
         >
           {[
             {

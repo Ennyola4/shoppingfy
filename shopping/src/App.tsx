@@ -1,3 +1,4 @@
+import About from "./components/About"
 import Categories from "./components/Categories"
 import Footer from "./components/Footer"
 import HomePage from "./components/HomePage"
@@ -13,6 +14,7 @@ const App = () => {
      <HomePage/>
      <Trust/>
      <Products/>
+     <About/>
      <Categories/>
      <TrendingNow/>
      <Footer/>
