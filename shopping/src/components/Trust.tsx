@@ -6,7 +6,7 @@ const Trust = () => {
             {trust.map((item, index) => (
                 <div
                     key={index}
-                    className="flex flex-col md:flex-row items-center text-center md:text-left p-6 rounded-lg shadow-lg bg-[#C08081]/10 text-white"
+                    className="flex flex-col md:flex-row items-center text-center md:text-left p-4 rounded-lg shadow-sm bg-[#C08081]/10 text-white"
                 >
 
 

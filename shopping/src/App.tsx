@@ -1,6 +1,9 @@
 import About from "./components/About"
 import Categories from "./components/Categories"
+import CustomerReviews from "./components/CustomerReview"
+import Display from "./components/Display"
 import Footer from "./components/Footer"
+import HeadlineTicker from "./components/HeadlineSticker"
 import HomePage from "./components/HomePage"
 import Navbar from "./components/Navbar"
 import Trust from "./components/Trust"
@@ -12,11 +15,14 @@ const App = () => {
     <div>
      <Navbar/>
      <HomePage/>
+     <HeadlineTicker/>
      <Trust/>
      <Products/>
      <About/>
+     <Display/>
      <Categories/>
      <TrendingNow/>
+     <CustomerReviews/>
      <Footer/>
     </div>
   )

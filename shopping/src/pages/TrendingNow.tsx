@@ -123,7 +123,7 @@ const TrendingNow = () => {
 
           ].map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-[70vh] flex items-center justify-center text-center">
+              <div className="relative h-[50vh] flex items-center justify-center text-center">
                 <img
                   src={slide.image}
                   alt={slide.title}
