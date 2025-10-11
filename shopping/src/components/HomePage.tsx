@@ -51,7 +51,7 @@ const HomePage = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-fixed bg-center"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${images[current]})`,
             }}
