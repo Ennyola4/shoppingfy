@@ -1,4 +1,12 @@
-import {  Headphones, ShieldCheck, ShieldCheckIcon, ShoppingCart, StarIcon, Truck, TruckIcon } from "lucide-react";
+import {
+  Headphones,
+  ShieldCheck,
+  ShieldCheckIcon,
+  ShoppingBasket,
+  StarIcon,
+  Truck,
+  TruckIcon
+} from "lucide-react";
 
 export const products = [
   {
@@ -119,26 +127,26 @@ export const products = [
 
 export const trust = [
   {
-    icon: TruckIcon, 
+    icon: TruckIcon,
     title: "Free Shipping",
     description: "Free delivery on orders over $50",
-    rating: 4, 
+    rating: 4,
     reviewCount: 124,
     details: ["2-3 day delivery", "Free returns", "Track your order"],
     badge: "Most Popular",
-    bgColor : "bg-red-500/10",
-    textColor : "text-red-600"
+    bgColor: "bg-red-500/10",
+    textColor: "text-red-600"
   },
   {
     icon: ShieldCheckIcon,
-    title: "Secure Payment", 
+    title: "Secure Payment",
     description: "Your data is always protected",
     rating: 5,
     reviewCount: 89,
     details: ["256-bit encryption", "PCI compliant", "Money-back guarantee"],
     badge: "Verified",
-     bgColor : "bg-green-500/10",
-    textColor : "text-green-600"
+    bgColor: "bg-green-500/10",
+    textColor: "text-green-600"
   },
   {
     icon: StarIcon,
@@ -148,10 +156,10 @@ export const trust = [
     reviewCount: 2150,
     details: ["500+ 5-star reviews", "Customer choice 2024", "Verified purchases"],
     badge: "Award Winning",
-     bgColor : "bg-yellow-500/10",
-    textColor : "text-yellow-600"
+    bgColor: "bg-yellow-500/10",
+    textColor: "text-yellow-600"
   }
-  
+
 ];
 
 export const categorySummary = [
@@ -159,28 +167,28 @@ export const categorySummary = [
     icon: Truck,
     title: "Fast Delivery",
     description: "Get your orders delivered swiftly — speed and reliability at your doorstep.",
-    bgColor: "bg-red-500/10",
-    textColor: "text-red-500",
+    bgColor: "bg-[#C08081]/10",
+    textColor: "text-[#C08081]",
   },
   {
     icon: Headphones,
     title: "Best Online Support",
     description: "We're here 24/7 — real people, real solutions, right when you need us.",
-    bgColor: "bg-yellow-500/10",
-    textColor: "text-yellow-500",
+    bgColor: "bg-[#C08081]/10",
+    textColor: "text-[#C08081]",
   },
   {
     icon: ShieldCheck,
     title: "Secure Payment",
     description: "Shop with confidence — every transaction is protected and encrypted.",
-    bgColor: "bg-green-500/10",
-    textColor: "text-green-500",
+    bgColor: "bg-[#C08081]/10",
+    textColor: "text-[#C08081]",
   },
   {
-    icon: ShoppingCart,
+    icon: ShoppingBasket,
     title: "Shop Special Offers",
-    description: "Discover exclusive deals and limited-time offers curated just for you.",
-    bgColor: "bg-blue-500/10",
-    textColor: "text-blue-500",
+    description: "Discover exclusive deals and limited-time offers  just for you.",
+    bgColor: "bg-[#C08081]/10",
+    textColor: "text-[#C08081]",
   },
 ];

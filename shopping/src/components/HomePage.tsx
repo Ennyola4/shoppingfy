@@ -88,7 +88,7 @@ const HomePage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:justify-center lg:justify-start">
-            <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
+            <button className="mt-2 cursor-pointer px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
               <ShoppingBag
                 className="inline items-center mr-2 hover:text-gray-800"
                 size={16}
@@ -96,7 +96,7 @@ const HomePage = () => {
               Shop Fashion
             </button>
 
-            <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
+            <button className="mt-2 cursor-pointer px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
               <Tablet
                 className="inline items-center mr-2 hover:text-gray-800"
                 size={16}

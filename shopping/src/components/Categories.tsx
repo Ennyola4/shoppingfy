@@ -29,7 +29,7 @@ const Categories = () => {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl mt-10 font-bold text-center mb-6 text-[#002366]"
       >
-        Featured Categories
+        Featured Categories 💫
       </motion.h1>
 
       <motion.p
@@ -55,7 +55,7 @@ const Categories = () => {
           custom={0}
         >
           <motion.h2
-            whileHover={{ scale: 0.8 }}
+            whileHover={{ scale: 1.05 }}
             className="text-3xl p-2 mt-6 font-semibold text-[#0E0C60]"
           >
             Fashion
@@ -76,7 +76,7 @@ const Categories = () => {
               scale: 1.04,
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer rounded-md hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center border border-[#0E0C60]"
+            className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center border border-[#0E0C60]"
           >
             <SkipForward className="h-5 w-5" />
             Browse collection
@@ -92,9 +92,9 @@ const Categories = () => {
                 boxShadow: "0 0 25px rgba(14, 12, 96, 0.25)",
               }}
               transition={{ duration: 0.4 }}
-              className=" w-full h-[25em] cursor-pointer object-cover"
+              className=" w-full h-[25em] object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
+            <div className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
               <Shirt className="text-white w-10 h-10 mb-3" />
               <p className="text-white text-xl font-semibold tracking-wide">
                 Trendy Styles
@@ -124,7 +124,7 @@ const Categories = () => {
               transition={{ duration: 0.4 }}
               className=" w-full h-[25em] object-cover"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
+            <div className="absolute inset-0 flex flex-col cursor-pointer items-center justify-center bg-black/40 rounded-xl opacity-0 hover:opacity-100 transition duration-300">
               <Smartphone className="text-white w-10 h-10 mb-3" />
               <p className="text-white text-xl font-semibold tracking-wide">
                 Smart Innovations
@@ -154,7 +154,7 @@ const Categories = () => {
               scale: 1.07,
             }}
             whileTap={{ scale: 0.95 }}
-            className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer rounded-md hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 text-center border border-[#0E0C60]"
+            className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer  hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 text-center border border-[#0E0C60]"
           >
             <SkipForward className="h-5 w-5" />
             Browse collection
@@ -170,7 +170,7 @@ const Categories = () => {
           <div className="mb-4">
             <item.icon
               size={70}
-              className={`${item.bgColor} ${item.textColor} p-4 rounded-full shadow-sm`}
+              className={`${item.bgColor} ${item.textColor} p-4 rounded-full shadow-sm font-bold`}
             />
           </div>
           <h3 className="text-[#002366] font-bold font-serif text-xl mb-2">

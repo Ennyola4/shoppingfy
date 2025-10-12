@@ -58,7 +58,7 @@ const fadeUp: Variants = {
 
 const CustomerReviews = () => {
   return (
-    <div className="bg-gradient-to-b from-[#fef6f9] via-white to-[#f3f9ff] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <div className="py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -85,21 +85,21 @@ const CustomerReviews = () => {
             whileInView="visible"
             custom={i}
             viewport={{ once: true }}
-            className="relative bg-white border border-gray-100 shadow-lg hover:shadow-2xl rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3"
+            className="relative bg-white shadow-md  rounded-xl p-8 transition-all duration-500 hover:-translate-y-3"
           >
             {/* Floating Quote Icon */}
             <motion.div
-              className="absolute -top-4 right-6 bg-pink-100 p-2 rounded-full"
+              className="absolute -top-4 right-6 bg-[#0E0C60]/10 p-2 rounded-full"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.4, type: "spring" }}
             >
-              <Quote className="text-pink-500 w-5 h-5" />
+              <Quote className="text-[#0E0C60] w-5 h-5" />
             </motion.div>
 
             {/* Profile */}
             <div className="flex flex-col items-center mb-6">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-300 shadow-md">
+              <div className="w-20 h-20 rounded-full overflow-hidden  border-[#0E0C60]/30 shadow-sm">
                 <img
                   src={review.image}
                   alt={review.name}
@@ -146,7 +146,7 @@ const CustomerReviews = () => {
         <p className="text-gray-500 mb-6">
           Be part of the Shoppingfy experience — where quality meets style.
         </p>
-        <button className="px-8 py-3 bg-[#0E0C60] text-white rounded-full font-semibold hover:bg-pink-600 transition-all duration-300 shadow-md">
+        <button className="px-8 py-3 cursor-pointer text-[#0E0C60] hover:text-white border border-[#0E0C60] font-semibold hover:bg-[#0E0C60] transition-all duration-500">
           Shop Now
         </button>
       </motion.div>

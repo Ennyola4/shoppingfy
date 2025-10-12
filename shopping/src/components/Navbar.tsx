@@ -121,6 +121,7 @@ const Navbar = () => {
                                     <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">My Profile</li>
                                     <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Orders</li>
                                     <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Logout</li>
+                                    
                                 </ul>
                             </div>
                         </div>

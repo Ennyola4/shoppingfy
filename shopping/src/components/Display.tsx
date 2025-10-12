@@ -13,7 +13,7 @@ const Display = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 font-serif"
+                className="text-3xl md:text-4xl font-bold text-[#002366] text-center mb-12 font-serif"
             >
                 Discover Trending Collections
             </motion.h2>
@@ -26,7 +26,7 @@ const Display = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true }}
-                    className="relative overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-700"
+                    className="relative overflow-hidden  group shadow-lg hover:shadow-2xl transition-all duration-700"
                 >
                     {/* Background Image */}
                     <img
@@ -54,11 +54,11 @@ const Display = () => {
 
                         {/* Buttons */}
                         <div className="flex items-center gap-3 mt-4">
-                            <button className="flex items-center gap-2 bg-white text-gray-900 font-semibold rounded-full px-5 py-2 hover:bg-gray-200 transition-all duration-300 shadow-md">
+                            <button className="flex items-center gap-2 bg-white cursor-pointer text-gray-900 font-semibold  px-5 py-2 hover:bg-gray-200/10 hover:text-white hover:border-white border transition-all duration-300 shadow-md">
                                 <ShoppingBagIcon className="w-4 h-4" />
                                 Shop Now
                             </button>
-                            <button className="flex items-center gap-1 border border-white/60 text-white font-semibold rounded-full px-5 py-2 hover:bg-white hover:text-gray-900 transition-all duration-300">
+                            <button className="flex items-center gap-1 border cursor-pointer border-white/60 text-white font-semibold  px-5 py-2 hover:bg-white hover:text-gray-900 transition-all duration-300">
                                 Discover <ArrowRight className="w-4 h-4" />
                             </button>
                         </div>
@@ -73,7 +73,7 @@ const Display = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7 }}
                         viewport={{ once: true }}
-                        className="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-700"
+                        className="relative  overflow-hidden group shadow-md hover:shadow-xl transition-all duration-700"
                     >
                         <img
                             src={airmax}
@@ -104,7 +104,7 @@ const Display = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7 }}
                         viewport={{ once: true }}
-                        className="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-700"
+                        className="relative overflow-hidden group shadow-md hover:shadow-xl transition-all duration-700"
                     >
                         <img
                             src={runner}
@@ -119,7 +119,7 @@ const Display = () => {
                             <p className="text-gray-200 text-xs max-w-xs">
                                 Made for the streets, powered by comfort.
                             </p>
-                            <button className="mt-3 text-sm font-medium border-b border-white/60 hover:border-white transition-all duration-300">
+                            <button className="mt-3 text-sm font-medium border-b cursor-pointer border-white/60 hover:border-white transition-all duration-300">
                                 Explore →
                             </button>
                         </div>

@@ -10,7 +10,7 @@ const trendingItems = [
     image:
       "https://incanda.co.za/wp-content/uploads/2020/04/Leather-Tote-Bag-Classic-001.jpg",
     name: "Classic Leather Bag",
-    price: "$120",
+    price: "120,00",
     category: "Accessories",
   },
   {
@@ -18,7 +18,7 @@ const trendingItems = [
     image:
       "https://infinit.store/cdn/shop/products/KoreanStreetwearhoodiesurbanstreetfashionkoreanhoodiesBlack-INFINITSTORE_1.jpg?v=1688118062",
     name: "Urban Street Hoodie",
-    price: "$85",
+    price: "85,000",
     category: "Clothing",
   },
   {
@@ -26,7 +26,7 @@ const trendingItems = [
     image:
       "https://ciska.com.ng/wp-content/uploads/2025/09/IMG-20250911-WA0162.jpg",
     name: "Retro Sunglasses",
-    price: "$60",
+    price: "6,000",
     category: "Accessories",
   },
   {
@@ -34,7 +34,7 @@ const trendingItems = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3W4KcMS99vBO2V5Td07mU2IjHnOQgIZF2mw&s",
     name: "Smart Watch Pro",
-    price: "$250",
+    price: "250,000",
     category: "Electronics",
   },
   {
@@ -42,7 +42,7 @@ const trendingItems = [
     image:
       "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1020752/1.jpg?2855",
     name: "Running Sneakers",
-    price: "$95",
+    price: "9,500",
     category: "Shoes",
   },
   {
@@ -50,7 +50,7 @@ const trendingItems = [
     image:
       "https://ae01.alicdn.com/kf/S1fde1f34a80548f680fb1a542c06cd6d3.jpg",
     name: "Luxury Women's Dress",
-    price: "$160",
+    price: "160,00",
     category: "Clothing",
   },
 ];
@@ -141,7 +141,7 @@ const TrendingNow = () => {
                   <p className="text-gray-200 text-lg mb-6">
                     {slide.subtitle}
                   </p>
-                  <button className="px-8 py-3 bg-white text-[#0E0C60] font-semibold rounded-full shadow hover:scale-105 hover:shadow-xl transition-all">
+                  <button className="px-8 py-3 cursor-pointer text-white border border-white hover:bg-white hover:text-black font-semibold hover:scale-105 transition-all duration-500">
                     Shop Collection
                   </button>
                 </motion.div>
@@ -180,7 +180,7 @@ const TrendingNow = () => {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-5 py-2 rounded-full cursor-pointer text-sm font-semibold transition-all duration-300 ${
               activeFilter === cat
                 ? "bg-[#0E0C60] text-white shadow-md"
                 : "bg-gray-100 text-gray-600 hover:bg-[#0E0C60]/10"
@@ -234,14 +234,14 @@ const TrendingNow = () => {
 
             <div className="p-5 space-y-3">
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-lg font-semibold text-[#0E0C60]">
                   {item.name}
                 </h3>
-                <span className="text-[#0E0C60] font-bold">{item.price}</span>
+                <span className="text-[#0E0C60] font-bold">₦{item.price}</span>
               </div>
               <p className="text-gray-500 text-sm">{item.category}</p>
 
-              <button className="w-full mt-3 flex items-center justify-center gap-2 py-2 rounded-lg bg-[#0E0C60] text-white font-medium hover:bg-blue-900 transition-all">
+              <button className="w-full mt-3 flex cursor-pointer items-center justify-center gap-2 py-2 rounded-lg  text-[#C08081] font-medium hover:bg-[#C08081] hover:text-white border border-[#C08081] transition-all duration-500">
                 <ShoppingBag className="w-5 h-5" /> Shop Now
               </button>
             </div>

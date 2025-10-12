@@ -65,7 +65,7 @@ const About = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:justify-center lg:justify-start">
-              <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
+              <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 cursor-pointer border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
                 <Info
                   className="inline items-center mr-2 hover:text-gray-800"
                   size={16}
@@ -73,7 +73,7 @@ const About = () => {
                 Learn More
               </button>
 
-              <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
+              <button className="mt-2 px-5 py-2 sm:px-6 sm:py-3 cursor-pointer  border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">
                 <Users
                   className="inline items-center mr-2 hover:text-gray-800"
                   size={16}
