@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import fashion from "../assets/images/fashion.jpg";
 import gadget from "../assets/images/gadget.jpg";
 import { SkipForward, Shirt, Smartphone } from "lucide-react";
+import { categorySummary } from "../utils";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -16,9 +17,11 @@ const fadeUp: Variants = {
   }),
 };
 
+
+
 const Categories = () => {
   return (
-    <div className="px-4 md:px-10 lg:px-20 bg-gradient-to-b from-white via-gray-50 to-white pb-10">
+    <div className="px-4 md:px-10 lg:px-20  pb-10">
       {/* Header */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
@@ -158,6 +161,27 @@ const Categories = () => {
           </motion.button>
         </motion.div>
       </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 p-8 text-center place-items-center">
+      {categorySummary.map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center justify-center text-center p-6"
+        >
+          <div className="mb-4">
+            <item.icon
+              size={70}
+              className={`${item.bgColor} ${item.textColor} p-4 rounded-full shadow-sm`}
+            />
+          </div>
+          <h3 className="text-[#002366] font-bold font-serif text-xl mb-2">
+            {item.title}
+          </h3>
+          <p className="text-gray-500 font-light font-serif max-w-xs">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
     </div>
   );
 };

@@ -3,7 +3,12 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Youtube,  Twitter } from "luc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0E0C60] text-gray-200 pt-16 pb-8 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+    <footer className=" bg-cover text-gray-200 pt-16 pb-8 px-6 md:px-12 lg:px-20 relative overflow-hidden" style={{
+          backgroundImage:
+            "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",
+        }}>
+                  <div className="absolute inset-0 bg-black/80"></div>
+
       {/* Animated background shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
