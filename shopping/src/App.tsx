@@ -1,4 +1,5 @@
 import About from "./components/About"
+import Blog from "./components/Blog"
 import Categories from "./components/Categories"
 import CustomerReviews from "./components/CustomerReview"
 import Display from "./components/Display"
@@ -24,6 +25,7 @@ const App = () => {
      <Categories/>
      <SecondDisplay/>
      <TrendingNow/>
+     <Blog/>
      <CustomerReviews/>
      <Footer/>
     </div>

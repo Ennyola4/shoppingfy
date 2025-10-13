@@ -123,8 +123,6 @@ export const products = [
   },
 ];
 
-
-
 export const trust = [
   {
     icon: TruckIcon,
@@ -190,5 +188,32 @@ export const categorySummary = [
     description: "Discover exclusive deals and limited-time offers  just for you.",
     bgColor: "bg-[#C08081]/10",
     textColor: "text-[#C08081]",
+  },
+];
+
+export const blog = [
+  {
+    autor: "Adesuwa Bello",
+    date: "09-12-2024",
+    time: "10:30am",
+    image: "https://ounass-ae.atgcdn.ae/contentful/b3xlytuyfm3e/5eBTEA5YilyV4rXYBf4CfL/6cf7784f92b76f82bd5ed01647b8ef58/Women_Accessories_DSK_PLP_Banner_.jpg?q=70",
+    dp: "https://urbangeekz.com/wp-content/uploads/2024/02/Adefolakunmi-Adenugba-824x480.jpg",
+    desc: "Discover the timeless beauty of minimal fashion — where elegance meets everyday comfort.",
+  },
+  {
+    autor: "David Okoro",
+    date: "10-05-2024",
+    time: "2:00pm",
+    image: "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=900&q=80",
+    dp: "https://t3.ftcdn.net/jpg/03/97/01/50/360_F_397015069_YvoHexqYAKLGdeKNZktvjchm7bkQEsMc.jpg",
+    desc: "Streetwear is evolving fast — learn how to blend confidence and comfort effortlessly.",
+  },
+  {
+    autor: "Lara Ogunleye",
+    date: "10-09-2024",
+    time: "4:15pm",
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+    dp: "https://www.bellanaija.com/wp-content/uploads/2018/09/3-10.jpg",
+    desc: "Accessories can define your look — here’s how to pick the right statement pieces for any outfit.",
   },
 ];

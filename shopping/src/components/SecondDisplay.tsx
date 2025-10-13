@@ -1,6 +1,5 @@
 import sneakers from "../assets/images/sneakers.jpg";
 import nike2 from "../assets/images/nike2.jpg";
-
 import { motion } from "framer-motion";
 
 const SecondDisplay = () => {
@@ -8,14 +7,31 @@ const SecondDisplay = () => {
     <section className="px-6 py-10 md:px-16 lg:px-24 bg-gradient-to-br from-white via-gray-50 to-gray-100 font-serif">
       {/* First Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
-        <motion.img
-          src={nike2}
-          alt="Red Nike"
-          className="w-full lg:w-1/2 rounded-2xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
+        {/* Image with Always-Visible Overlay Text */}
+        <motion.div
+          className="relative w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-        />
+        >
+          <img
+            src={nike2}
+            alt="Nike Shoes"
+            className="w-full h-full object-cover"
+          />
+          {/* Always visible overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 text-white rounded-2xl">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-2 tracking-wide">
+              Nike Air Revolution
+            </h2>
+            <p className="text-sm md:text-base max-w-md leading-relaxed">
+              Elevate every step — where bold design meets unstoppable comfort
+              and confidence.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Text beside image */}
         <motion.div
           className="lg:w-1/2 text-gray-700 text-lg leading-relaxed"
           initial={{ opacity: 0, x: 50 }}
@@ -41,7 +57,7 @@ const SecondDisplay = () => {
       {/* Second Section */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
         <motion.div
-          className="lg:w-1/2  text-lg leading-relaxed"
+          className="lg:w-1/2 text-lg leading-relaxed"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -59,14 +75,28 @@ const SecondDisplay = () => {
             confident — this is footwear evolution done right.
           </p>
         </motion.div>
-        <motion.img
-          src={sneakers}
-          alt="Red Nike"
-          className="w-full lg:w-1/2 rounded-2xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
+
+        {/* Second image with visible overlay */}
+        <motion.div
+          className="relative w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-        />
+        >
+          <img
+            src={sneakers}
+            alt="Sneakers"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 text-white rounded-2xl">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-2 tracking-wide">
+              Built to Perform
+            </h2>
+            <p className="text-sm md:text-base max-w-md leading-relaxed">
+              Power your every move — sleek, strong, and made for champions.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
