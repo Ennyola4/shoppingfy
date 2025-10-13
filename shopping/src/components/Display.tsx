@@ -6,14 +6,14 @@ import runner from "../assets/images/runner.jpg";
 
 const Display = () => {
     return (
-        <div className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
+        <div className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-16 px-6 md:px-12 lg:px-20 overflow-hidden font-serif">
             {/* Header */}
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-[#002366] text-center mb-12 font-serif"
+                className="text-3xl md:text-4xl font-bold italic text-[#002366] text-center mb-12"
             >
                 Discover Trending Collections
             </motion.h2>

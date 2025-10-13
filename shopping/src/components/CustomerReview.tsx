@@ -67,7 +67,7 @@ const CustomerReviews = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold font-serif text-[#0E0C60]">
+        <h2 className="text-4xl md:text-5xl font-bold font-serif italic text-[#0E0C60]">
           Our Happy Customers 💫
         </h2>
         <p className="text-gray-600 mt-4 text-base md:text-lg max-w-2xl mx-auto">
@@ -106,10 +106,10 @@ const CustomerReviews = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-[#0E0C60] mt-3">
+              <h3 className="text-lg font-serif font-semibold text-[#0E0C60] mt-3">
                 {review.name}
               </h3>
-              <p className="text-sm text-gray-500">{review.role}</p>
+              <p className="text-sm font-serif text-gray-500">{review.role}</p>
             </div>
 
             {/* Review Text */}
@@ -140,13 +140,13 @@ const CustomerReviews = () => {
         viewport={{ once: true }}
         className="mt-20 text-center"
       >
-        <h3 className="text-2xl font-semibold text-[#0E0C60] mb-3">
+        <h3 className="text-2xl font-semibold text-[#0E0C60] font-serif mb-3">
           Join Thousands of Happy Shoppers
         </h3>
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 mb-6 font-serif">
           Be part of the Shoppingfy experience — where quality meets style.
         </p>
-        <button className="px-8 py-3 cursor-pointer text-[#0E0C60] hover:text-white border border-[#0E0C60] font-semibold hover:bg-[#0E0C60] transition-all duration-500">
+        <button className="px-12 py-2 cursor-pointer text-[#0E0C60] font-serif hover:text-white border border-[#0E0C60] font-semibold hover:bg-[#0E0C60] transition-all duration-500">
           Shop Now
         </button>
       </motion.div>

@@ -21,13 +21,13 @@ const fadeUp: Variants = {
 
 const Categories = () => {
   return (
-    <div className="px-4 md:px-10 lg:px-20  pb-10">
+    <div className="px-4 md:px-10 lg:px-20  pb-10 font-serif">
       {/* Header */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl mt-10 font-bold text-center mb-6 text-[#002366]"
+        className="text-3xl md:text-4xl mt-10 italic font-bold text-center mb-6 text-[#002366]"
       >
         Featured Categories 💫
       </motion.h1>

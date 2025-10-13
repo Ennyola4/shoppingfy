@@ -66,7 +66,7 @@ const TrendingNow = () => {
   const categories = ["All", "Clothing", "Accessories", "Electronics", "Shoes"];
 
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 ">
+    <div className="min-h-screen py-16 px-6 md:px-12 font-serif">
       {/* 🔥 HERO CAROUSEL */}
       <div className="mb-16">
         <Swiper
@@ -160,7 +160,7 @@ const TrendingNow = () => {
       >
         <div className="flex justify-center items-center gap-3 mb-3">
           <Sparkles className="text-[#0E0C60] w-6 h-6 animate-pulse" />
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0E0C60] font-serif">
+          <h1 className="text-4xl italic md:text-5xl font-bold text-[#0E0C60] font-serif">
             Trending Now
           </h1>
         </div>

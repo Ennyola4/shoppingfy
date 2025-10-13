@@ -22,7 +22,7 @@ const About = () => {
   return (
     <div>
       <div
-        className="relative h-[65vh] flex items-center justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
+        className="relative h-[65vh] flex items-center font-serif justify-center px-6 md:px-10 lg:px-20 overflow-hidden bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",

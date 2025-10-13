@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Youtube,  Twitter } from "luc
 
 const Footer = () => {
   return (
-    <footer className=" bg-cover text-gray-200 pt-16 pb-8 px-6 md:px-12 lg:px-20 relative overflow-hidden" style={{
+    <footer className=" bg-cover text-gray-200 pt-16 pb-8 px-6 md:px-12 lg:px-20 relative overflow-hidden font-serif" style={{
           backgroundImage:
             "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",
         }}>

@@ -205,7 +205,7 @@ const Products = () => {
                 viewport={{ once: true }}
                 className="mt-20 text-center"
             >
-                <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#002366] mb-4">
+                <h1 className="text-2xl md:text-3xl italic font-bold text-[#002366] mb-4">
                     More Than Just a Store
                 </h1>
                 <p className="text-gray-500 font-medium max-w-2xl mx-auto px-4 mb-10">
