@@ -60,9 +60,9 @@ const Navbar = () => {
     isHomePage && !scrolled ? "hover:bg-white/20" : "hover:bg-gray-200";
   const navBg = isHomePage
     ? scrolled
-      ? "bg-[#C08081]/90 backdrop-blur-lg shadow-md"
+      ? "bg-[#C08081]/90 "
       : "bg-transparent"
-    : "bg-[#C08081]/90 backdrop-blur-lg shadow-md";
+    : "bg-[#C08081]/90  ";
 
   return (
     <nav
@@ -156,7 +156,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden p-2 rounded transition ${iconHoverBg}`}
+              className={`md:hidden p-2 mr-4 rounded transition ${iconHoverBg}`}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
