@@ -66,7 +66,7 @@ const TrendingNow = () => {
   const categories = ["All", "Clothing", "Accessories", "Electronics", "Shoes"];
 
   return (
-    <div className="min-h-screen py-16 px-6 md:px-12 font-serif">
+    <div className="min-h-screen mt-10 py-16 px-6 md:px-10 font-serif">
       {/* 🔥 HERO CAROUSEL */}
       <div className="mb-16">
         <Swiper
@@ -80,7 +80,7 @@ const TrendingNow = () => {
           }}
           loop={true}
           speed={1200}
-          className="rounded-2xl shadow-sm overflow-hidden"
+          className="rounded-xl shadow-sm overflow-hidden"
         >
           {[
             {
@@ -123,7 +123,7 @@ const TrendingNow = () => {
 
           ].map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-[50vh] flex items-center justify-center text-center">
+              <div className="relative h-[50vh]  flex items-center justify-center text-center">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -164,7 +164,7 @@ const TrendingNow = () => {
             Trending Now
           </h1>
         </div>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto ">
           Discover what’s hot — from timeless classics to the latest must-haves
           everyone’s loving.
         </p>

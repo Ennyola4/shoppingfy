@@ -2,7 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import fashion from "../assets/images/fashion.jpg";
 import gadget from "../assets/images/gadget.jpg";
 import { SkipForward, Shirt, Smartphone } from "lucide-react";
-import { categorySummary } from "../utils";
+import CategorySummary from "./CategorySummary";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -156,32 +156,12 @@ const Categories = () => {
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 p-3 text-[#0E0C60] cursor-pointer  hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 text-center border border-[#0E0C60]"
           >
-            <SkipForward className="h-5 w-5" />
+            <SkipForward className="h-5 w-5 " />
             Browse collection
           </motion.button>
         </motion.div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 p-8 text-center place-items-center">
-      {categorySummary.map((item, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-center justify-center text-center p-6"
-        >
-          <div className="mb-4">
-            <item.icon
-              size={70}
-              className={`${item.bgColor} ${item.textColor} p-4 rounded-full shadow-sm font-bold`}
-            />
-          </div>
-          <h3 className="text-[#002366] font-bold font-serif text-xl mb-2">
-            {item.title}
-          </h3>
-          <p className="text-gray-500 font-light font-serif max-w-xs">
-            {item.description}
-          </p>
-        </div>
-      ))}
-    </div>
+     <CategorySummary/>
     </div>
   );
 };

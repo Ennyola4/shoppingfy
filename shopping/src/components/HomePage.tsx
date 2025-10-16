@@ -27,7 +27,8 @@ const HomePage = () => {
      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80",
      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1600&q=80",
      "https://cdn.pixabay.com/photo/2017/12/24/01/18/childrens-shoes-3036292_1280.jpg",
-     "https://www.shutterstock.com/image-illustration/home-appliances-household-kitchen-technics-260nw-2267656915.jpg"
+     "https://www.shutterstock.com/image-illustration/home-appliances-household-kitchen-technics-260nw-2267656915.jpg",
+     "https://www.essence.com/wp-content/uploads/2025/01/MG_3321-scaled.jpg"
   ];
 
   const [current, setCurrent] = useState(0);
@@ -93,7 +94,8 @@ const HomePage = () => {
                 className="inline items-center mr-2 hover:text-gray-800"
                 size={16}
               />
-              Shop Fashion
+              
+              <a href="/shop">Shop Fashion</a>
             </button>
 
             <button className="mt-2 cursor-pointer px-5 py-2 sm:px-6 sm:py-3 border border-white text-white font-semibold hover:bg-gray-100 hover:text-gray-800 transition duration-500">

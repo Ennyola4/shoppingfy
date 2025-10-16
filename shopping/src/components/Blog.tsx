@@ -3,7 +3,7 @@ import { CalendarDays, Clock } from "lucide-react";
 
 const Blog = () => {
   return (
-    <section className="px-6 py-12 md:px-12 lg:px-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 font-serif">
+    <section className="px-6 py-12 md:px-12 mt-10 lg:px-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 font-serif">
       <h1 className="text-[#002366] italic text-3xl md:text-4xl font-bold text-center mb-10">
         Our Blog
       </h1>

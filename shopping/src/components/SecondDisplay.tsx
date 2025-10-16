@@ -22,7 +22,7 @@ const SecondDisplay = () => {
           {/* Always visible overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 text-white rounded-2xl">
             <h2 className="text-2xl md:text-3xl font-semibold mb-2 tracking-wide">
-              Nike Air Revolution
+             Sketchers
             </h2>
             <p className="text-sm md:text-base max-w-md leading-relaxed">
               Elevate every step — where bold design meets unstoppable comfort
@@ -42,7 +42,7 @@ const SecondDisplay = () => {
             Step Into Comfort & Style
           </h1>
           <p className="mb-3 text-gray-500">
-            Experience the next level of comfort with Nike’s latest design. Built
+            Experience the next level of comfort with Sketchers latest design. Built
             for performance and style, it’s crafted to move with you — wherever
             your day takes you.
           </p>

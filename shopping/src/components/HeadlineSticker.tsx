@@ -11,7 +11,7 @@ const promos = [
 
 const HeadlineTicker = () => {
   return (
-    <div className="w-full bg-[#0E0C60]/90 text-white py-3 overflow-hidden border-b border-white/20">
+    <div className="w-full bg-[#0E0C60] text-white py-3 overflow-hidden">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{ x: ["0%", "-100%"] }}

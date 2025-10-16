@@ -1,6 +1,5 @@
-import { motion, } from "framer-motion";
+import { motion,type Variants } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import {  type Variants } from "framer-motion";
 
 
 const reviews = [
