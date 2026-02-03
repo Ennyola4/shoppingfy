@@ -1,28 +1,49 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "../utils";
-import { ShoppingCart, Star, X } from "lucide-react";
+import { ShoppingCart, SkipForward, Star, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+    const navigate = useNavigate();
 
     return (
         <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20  font-serif">
             {/* Header */}
-            <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#002366]"
-            >
-                Featured Products
-            </motion.h1>
-            <p className="text-gray-500 text-center font-medium max-w-2xl mx-auto px-4 mb-10">
-                We're here to simplify your search for the perfect items that define
-                your life. Our team is dedicated to finding the best in modern
-                fashion, innovative gadgets, and timeless lifestyle essentials—all in
-                one place.
-            </p>
+            <div className="flex justify-between items-center mb-10 flex-col md:flex-row gap-6">
+                <span className="text-left">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-3xl md:text-4xl font-bold ml-5  mb-12 text-[#002366]"
+                    >
+                        Featured Products
+                    </motion.h1>
+                    <p className="text-gray-500  font-medium max-w-2xl mx-auto px-4 mb-10">
+                        We're here to simplify your search for the perfect items that define
+                        your life. Our team is dedicated to finding the best in modern
+                        fashion, innovative gadgets, and timeless lifestyle essentials—all in
+                        one place.
+                    </p>
+                </span>
+                <span>
+                    <motion.button
+                        onClick={() => {
+                            navigate("/shop")
+                        }}
+                        whileHover={{
+                            scale: 1.04,
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-5 py-2 p-3 text-[#0E0C60] rounded-md cursor-pointer hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center border border-[#0E0C60]"
+                    >
+                        <SkipForward className="h-5 w-5" />
+                        View All Products
+                    </motion.button>
+                </span>
+            </div>
 
             {/* Products Grid */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
@@ -33,15 +54,16 @@ const Products = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                         whileHover={{ y: -6 }}
-                        className="relative w-full max-w-[350px] bg-white overflow-hidden  cursor-pointer"
-                        onClick={() => setSelectedProduct(product)}
+                        className="relative w-full max-w-[350px] bg-white overflow-hidden shadow-sm  cursor-pointer"
+                        onClick={() => navigate(`/product/${product.id}`)}
+
                     >
                         {/* Image */}
                         <div className="overflow-hidden relative">
                             <motion.img
                                 src={product.image}
                                 alt={product.name}
-                                className="w-full h-56 rounded-lg object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                className="w-full h-56  object-cover transform group-hover:scale-110 transition-transform duration-500"
                             />
                             <span className="absolute top-3 left-3 bg-[#002366] text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
                                 {product.category || "New Arrival"}
@@ -89,14 +111,14 @@ const Products = () => {
                                 </span>
                             </div>
 
-                            <motion.button
+                            {/* <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="w-full flex items-center justify-center gap-2 mt-3 cursor-pointer text-[#C08081] py-2 font-medium border border-[#C08081] hover:bg-[#C08081] hover:text-white transition-all duration-300"
                             >
                                 <ShoppingCart className="w-4 h-4" />
                                 Add to Cart
-                            </motion.button>
+                            </motion.button> */}
                         </div>
                     </motion.div>
                 ))}
@@ -218,7 +240,7 @@ const Products = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8">
                     {[
                         { label: "Products", value: "500+", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
-                        { label: "Happy Customers", value: "10k+",bgColor:"bg-[#002366]/10", textColor: "text-[#002366]"},
+                        { label: "Happy Customers", value: "10k+", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
                         { label: "Average Rating", value: "4.9", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
                         { label: "Countries", value: "50+", bgColor: "bg-[#002366]/10", textColor: "text-[#002366]" },
                     ].map((item) => (

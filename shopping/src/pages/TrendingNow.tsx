@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Heart, ShoppingBag, Sparkles, Filter } from "lucide-react";
+import { Heart, Sparkles, Filter, ShoppingCart } from "lucide-react";
 
 const trendingItems = [
   {
@@ -180,11 +180,10 @@ const TrendingNow = () => {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-5 py-2 rounded-full cursor-pointer text-sm font-semibold transition-all duration-300 ${
-              activeFilter === cat
+            className={`px-5 py-2 rounded-full cursor-pointer text-sm font-semibold transition-all duration-300 ${activeFilter === cat
                 ? "bg-[#0E0C60] text-white shadow-md"
                 : "bg-gray-100 text-gray-600 hover:bg-[#0E0C60]/10"
-            }`}
+              }`}
           >
             {cat}
           </button>
@@ -202,7 +201,7 @@ const TrendingNow = () => {
             transition: { staggerChildren: 0.15 },
           },
         }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" 
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
       >
         {filteredItems.map((item) => (
           <motion.div
@@ -241,9 +240,14 @@ const TrendingNow = () => {
               </div>
               <p className="text-gray-500 text-sm">{item.category}</p>
 
-              <button className="w-full mt-3 flex cursor-pointer items-center justify-center gap-2 py-2 rounded-lg  text-[#C08081] font-medium hover:bg-[#C08081] hover:text-white border border-[#C08081] transition-all duration-500">
-                <ShoppingBag className="w-5 h-5" /> Shop Now
-              </button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full flex items-center rounded-lg justify-center gap-2 mt-3 cursor-pointer text-[#C08081] py-2 font-medium border border-[#C08081] hover:bg-[#C08081] hover:text-white transition-all duration-300"
+              >
+                <ShoppingCart className="w-4 h-4" />
+                Add to Cart
+              </motion.button>
             </div>
           </motion.div>
         ))}

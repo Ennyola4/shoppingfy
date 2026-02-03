@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext"; // Your cart context
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,30 +20,29 @@ const Navbar = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
+  const { items, setIsCartOpen } = useCart(); // <-- Add setIsCartOpen to open cart drawer
+  const cartCount = items.length;
+
   const isHomePage = location.pathname === "/";
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/shop", label: "Shop" },
     { path: "/promotion", label: "Promotion" },
     { path: "/pages", label: "Pages" },
     { path: "/our-blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
 
-  // Sticky blur effect on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Disable body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
-  // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -53,28 +53,16 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showSearch]);
 
-  // Determine dynamic color classes
-  const baseTextColor =
-    isHomePage && !scrolled ? "text-white" : "text-white";
-  const iconHoverBg =
-    isHomePage && !scrolled ? "hover:bg-white/20" : "hover:bg-gray-200";
-  const navBg = isHomePage
-    ? scrolled
-      ? "bg-[#C08081]/90 "
-      : "bg-transparent"
-    : "bg-[#C08081]/90  ";
+  const baseTextColor = isHomePage && !scrolled ? "text-white" : "text-white";
+  const iconHoverBg = isHomePage && !scrolled ? "hover:bg-white/20" : "hover:bg-gray-200";
+  const navBg = isHomePage ? (scrolled ? "bg-[#C08081]/90" : "bg-transparent") : "bg-[#C08081]/90";
 
   return (
-    <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-500 font-serif ${navBg}`}
-    >
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 font-serif ${navBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            to="/"
-            className={`flex items-center gap-2 font-bold text-lg md:text-xl ${baseTextColor}`}
-          >
+          <Link to="/" className={`flex items-center gap-2 font-bold text-lg md:text-xl ${baseTextColor}`}>
             <ShoppingBasket />
             SHOPPINGFY
           </Link>
@@ -85,11 +73,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`transition-colors hover:underline ${
-                  isHomePage && !scrolled
-                    ? "text-white hover:text-gray-200"
-                    : "text-white hover:text-gray-200"
-                }`}
+                className={`transition-colors hover:underline ${isHomePage && !scrolled ? "text-white hover:text-gray-200" : "text-white hover:text-gray-200"}`}
               >
                 {link.label}
               </Link>
@@ -100,10 +84,7 @@ const Navbar = () => {
           <div className={`flex items-center gap-4 relative ${baseTextColor}`}>
             {/* Search */}
             <div ref={searchRef} className="relative flex items-center">
-              <button
-                className={`p-2 rounded-full transition-colors ${iconHoverBg}`}
-                onClick={() => setShowSearch((prev) => !prev)}
-              >
+              <button className={`p-2 rounded-full transition-colors ${iconHoverBg}`} onClick={() => setShowSearch(prev => !prev)}>
                 <Search size={20} />
               </button>
 
@@ -129,11 +110,30 @@ const Navbar = () => {
             </div>
 
             {/* Cart */}
-            <div className="relative cursor-pointer">
-              <ShoppingCart size={22} />
-              <span className="absolute -top-2 -right-2 bg-red-600 text-xs rounded-full px-1.5">
-                3
-              </span>
+            <div
+              className="relative cursor-pointer"
+              onClick={() => setIsCartOpen(true)} // <-- Open CartDrawer here
+            >
+              <motion.div
+                key={cartCount} 
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 0.3 }}
+                className="relative"
+              >
+                <ShoppingCart size={22} />
+                {cartCount > 0 && (
+                  <motion.span
+                    key={cartCount}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="absolute -top-2 -right-2 bg-red-600 text-xs rounded-full px-1.5"
+                  >
+                    {cartCount}
+                  </motion.span>
+                )}
+              </motion.div>
             </div>
 
             {/* Profile Dropdown */}
@@ -141,24 +141,15 @@ const Navbar = () => {
               <User className="cursor-pointer" />
               <div className="absolute right-0 mt-2 w-36 text-gray-200 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <ul className="flex flex-col bg-[#002366] p-2 text-sm rounded-md">
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">
-                    My Profile
-                  </li>
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">
-                    Orders
-                  </li>
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">
-                    Logout
-                  </li>
+                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">My Profile</li>
+                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Orders</li>
+                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Logout</li>
                 </ul>
               </div>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className={`md:hidden p-2 mr-4 rounded transition ${iconHoverBg}`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <button className={`md:hidden p-2 mr-4 rounded transition ${iconHoverBg}`} onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -194,14 +185,8 @@ const Navbar = () => {
 
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
-                  <motion.div
-                    key={link.path}
-                    whileHover={{ x: 6 }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Link to={link.path} className="hover:bg-white/20 rounded px-3 py-2 text-sm">
-                      {link.label}
-                    </Link>
+                  <motion.div key={link.path} whileHover={{ x: 6 }} onClick={() => setIsOpen(false)}>
+                    <Link to={link.path} className="hover:bg-white/20 rounded px-3 py-2 text-sm">{link.label}</Link>
                   </motion.div>
                 ))}
               </div>
