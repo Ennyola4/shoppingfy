@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { motion } from "framer-motion";
-import { Trash2, Minus, Plus } from "lucide-react";
+import { Trash2, Minus, Plus, ShoppingBag, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Checkout = () => {
@@ -103,7 +103,7 @@ const Checkout = () => {
                             required
                             className="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-[#002366] outline-none"
                         />
-                        <div className="flex gap-4">
+                        <div className="flex flex-col md:flex-row gap-4 w-full">
                             <input
                                 type="text"
                                 name="city"
@@ -111,7 +111,7 @@ const Checkout = () => {
                                 value={form.city}
                                 onChange={handleChange}
                                 required
-                                className="border border-gray-300 rounded-md px-4 py-2 flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
+                                className="border border-gray-300 rounded-md px-4 py-2 md:flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
                             />
                             <input
                                 type="text"
@@ -120,7 +120,7 @@ const Checkout = () => {
                                 value={form.postalCode}
                                 onChange={handleChange}
                                 required
-                                className="border border-gray-300 rounded-md px-4 py-2 flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
+                                className="border border-gray-300 rounded-md px-4 py-2 md:flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
                             />
                         </div>
                         <input
@@ -154,7 +154,7 @@ const Checkout = () => {
                             required
                             className="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-[#002366] outline-none"
                         />
-                        <div className="flex gap-4">
+                        <div className="flex flex-col md:flex-row gap-4 w-full">
                             <input
                                 type="text"
                                 name="expiry"
@@ -162,7 +162,7 @@ const Checkout = () => {
                                 value={form.expiry}
                                 onChange={handleChange}
                                 required
-                                className="border border-gray-300 rounded-md px-4 py-2 flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
+                                className="border border-gray-300 rounded-md px-4 py-2 md:flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
                             />
                             <input
                                 type="text"
@@ -172,10 +172,9 @@ const Checkout = () => {
                                 onChange={handleChange}
                                 required
                                 maxLength={3}
-                                className="border border-gray-300 rounded-md px-4 py-2 flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
+                                className="border border-gray-300 rounded-md px-4 py-2 md:flex-1 focus:ring-2 focus:ring-[#002366] outline-none"
                             />
                         </div>
-
                         <Button
                             type="submit"
                             className={`bg-[#002366] text-white py-3 rounded-md mt-4 hover:bg-[#0E0C60] ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
@@ -187,22 +186,43 @@ const Checkout = () => {
                     </form>
                 </motion.div>
 
-                {/* Right: Cart Summary */}
+                {/* Right: Cart Summary*/}
                 <motion.div
-                    className="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-md flex flex-col"
+                    className="w-full lg:w-1/3 bg-white border border-gray-200 p-6 rounded-lg shadow-md flex flex-col lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-8rem)]"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-xl font-semibold mb-4">Your Cart ({items.length})</h2>
-                    <div className="flex-1 overflow-y-auto space-y-4">
+                    <div className="mb-4 shadow-sm border border-gray-200 p-4 rounded-lg">
+                        <h2 className="text-md font-semibold">Your Cart <span className="text-[#C08081]/80">{items.length}</span></h2>
                         {items.length === 0 ? (
-                            <p className="text-gray-500">Your cart is empty.</p>
+                            <p className="text-gray-500"></p>
+                        ) : items.length === 1 ? (
+                            <span className="flex items-center mt-2">
+                                <p className="text-gray-500 text-[10px]">This is the item you picked.</p>
+                                <CircleCheck className="inline-block ml-1 text-green-600 w-3 h-3 " />
+                            </span>
+                        ) : (
+                            <span className="flex items-center mt-2">
+                                <p className="text-gray-500 text-[10px]">These are the items you picked.</p>
+                                <CircleCheck className="inline-block ml-1 text-green-500 w-3 h-3 " />
+                            </span>
+                        )}
+                    </div>
+                    
+                    {/* Fixed height container for mobile */}
+                    <div className="flex-1 overflow-y-auto max-h-[400px] md:max-h-none space-y-4 pr-2 mb-4" 
+                         style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e100 transparent' }}>
+                        {items.length === 0 ? (
+                            <div className="flex flex-col items-center justify-center h-full min-h-[200px]">
+                                <ShoppingBag className="h-16 w-16 mb-4 text-[#C08081]/20" />
+                                <p className="text-gray-500 text-center">Your cart is empty.</p>
+                            </div>
                         ) : (
                             items.map((item) => (
                                 <div
                                     key={`${item.product.id}-${item.size}-${item.color}`}
-                                    className="flex items-center gap-4"
+                                    className="flex items-center gap-4 p-4 bg-[#C08081]/10 rounded-lg"
                                 >
                                     <img
                                         src={item.product.images?.[0] ?? item.product.image}
@@ -247,9 +267,11 @@ const Checkout = () => {
 
                     {/* Total */}
                     <div className="mt-6 border-t pt-4">
-                        <div className="flex justify-between font-semibold text-lg">
-                            <span>Total</span>
-                            <span>₦{totalPrice.toLocaleString()}</span>
+                        <div className="flex justify-between font-semibold text-lg items-center">
+                            <span>
+                                Total Amount:
+                            </span>
+                            <span className=" text-sm px-3 py-1  animate-pulse text-green-500">₦{totalPrice.toLocaleString()}</span>
                         </div>
                     </div>
                 </motion.div>
