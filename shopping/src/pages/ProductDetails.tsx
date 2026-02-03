@@ -39,7 +39,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <section className="py-10 px-5 md:px-16">
+    <section className="py-10 px-5 md:px-16 mt-8">
       <h1 className="text-3xl md:text-4xl font-bold text-[#002366] mb-8">
         Featured Products
       </h1>

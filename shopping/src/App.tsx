@@ -8,6 +8,7 @@ import ProductDetail from './pages/ProductDetails';
 import Products from './pages/Products';
 import { CartProvider } from "./contexts/CartContext";
 import { CartDrawer } from "./components/cart/CartDrawer";
+import Checkout from './pages/Checkout';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
         <Route path='/shop' element={<Shop />} />
         <Route path='/our-blog' element={<OurBlog />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="*" element={<Products />} />
+        <Route path="product" element={<Products />} />
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </CartProvider>

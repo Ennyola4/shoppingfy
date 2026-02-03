@@ -1,3 +1,4 @@
+// src/contexts/CartContext.tsx
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 import { type CartItem } from "../contexts/cart.types";
 
@@ -14,6 +15,7 @@ interface CartContextType {
     quantity: number
   ) => void;
   totalPrice: number;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -35,6 +37,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("cartItems", JSON.stringify(items));
   }, [items]);
 
+  // Add item to cart
   const addItem = (newItem: CartItem) => {
     setItems((prev) => {
       const existing = prev.find(
@@ -58,6 +61,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setIsCartOpen(true);
   };
 
+  // Remove item from cart
   const removeItem = (productId: number, size: string, color: string) => {
     setItems((prev) =>
       prev.filter(
@@ -71,6 +75,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  // Update quantity of an item
   const updateQuantity = (
     productId: number,
     size: string,
@@ -90,10 +95,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  // Total price
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0
   );
+
+  // ✅ Clear cart
+  const clearCart = () => {
+    setItems([]);
+  };
 
   return (
     <CartContext.Provider
@@ -105,6 +116,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         removeItem,
         updateQuantity,
         totalPrice,
+        clearCart,
       }}
     >
       {children}
@@ -112,6 +124,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// Hook to use cart
 export const useCart = () => {
   const ctx = useContext(CartContext);
   if (!ctx) throw new Error("useCart must be used inside CartProvider");
