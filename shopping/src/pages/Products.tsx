@@ -37,7 +37,7 @@ const Products = () => {
                             scale: 1.04,
                         }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-5 py-2 p-3 text-[#0E0C60] rounded-md cursor-pointer hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center border border-[#0E0C60]"
+                        className="px-5 py-2 p-3 text-[#0E0C60] rounded-md cursor-pointer hover:bg-[#0E0C60] hover:text-white transition duration-300 flex gap-3 items-center justify-center mt-5 mb-5 text-center shadow border border-gray-300"
                     >
                         <SkipForward className="h-5 w-5" />
                         View All Products

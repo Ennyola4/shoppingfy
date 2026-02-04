@@ -14,12 +14,14 @@ import Promotion from './pages/Promotion';
 import Profile from './pages/Profile';
 import WishList from './pages/WishList';
 import Pages from './pages/Pages';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
     <CartProvider>
       <CartDrawer />
       <Navbar />
+      <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />

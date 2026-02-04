@@ -14,6 +14,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+      sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 3,
@@ -46,6 +50,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 4,
@@ -62,6 +68,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 5,
@@ -78,6 +86,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 6,
@@ -94,6 +104,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 7,
@@ -110,6 +122,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+    sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
   {
     id: 8,
@@ -126,8 +140,10 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
-   {
+  {
     id: 9,
     name: "Classic Leather Shoe",
     price: 45003,
@@ -142,8 +158,10 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
-   {
+  {
     id: 10,
     name: "Classic Leather Shoe",
     price: 45003,
@@ -158,6 +176,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
+     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
+    colors: ["Black", "Brown", "White"],
   },
 ];
 

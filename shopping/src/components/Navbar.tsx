@@ -113,7 +113,7 @@ const Navbar = () => {
             {/* Cart */}
             <div
               className="relative cursor-pointer"
-              onClick={() => setIsCartOpen(true)} // <-- Open CartDrawer here
+              onClick={() => setIsCartOpen(true)} 
             >
               <motion.div
                 key={cartCount}
@@ -149,7 +149,9 @@ const Navbar = () => {
                     className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">My Profile</li>
                   <li
                     onClick={() => {
-                      navigate('/wishlist');
+                      navigate('/wishlist')
+                      setIsOpen(false)
+                      ;
                     }}
                    className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">Wish list</li>
                   <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">Logout</li>

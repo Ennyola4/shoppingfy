@@ -5,6 +5,7 @@ import { useCart } from "@/contexts/CartContext";
 import { motion } from "framer-motion";
 import { Trash2, Minus, Plus, ShoppingBag, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "react-hot-toast";
 
 const Checkout = () => {
     useEffect(() => {
@@ -33,18 +34,18 @@ const Checkout = () => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (items.length === 0) return alert("Your cart is empty!");
-        setIsSubmitting(true);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (items.length === 0) return toast.error("Your cart is empty!");
+    setIsSubmitting(true);
 
-        setTimeout(() => {
-            alert("Payment successful! Order placed.");
-            clearCart();
-            setIsCartOpen(false);
-            navigate("/");
-        }, 1500);
-    };
+    setTimeout(() => {
+        toast.success("Payment successful! Order placed."); 
+        clearCart();
+        setIsCartOpen(false);
+        navigate("/");
+    }, 1500);
+};
 
     return (
         <section className="max-w-7xl mx-auto py-10 px-5 sm:px-8 md:px-12 lg:px-20 font-serif mt-8">
