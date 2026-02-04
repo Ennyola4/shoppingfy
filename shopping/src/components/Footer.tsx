@@ -116,15 +116,15 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Get in Touch</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3">
-              <Mail className="w-4 h-4 mt-0.5 text-[#C08081]" />
+              <Mail className="w-4 h-4 mt-0.5 text-[#C44536]" />
               <span>support@shoppingfy.com</span>
             </li>
             <li className="flex items-start gap-3">
-              <Phone className="w-4 h-4 mt-0.5 text-[#C08081]" />
+              <Phone className="w-4 h-4 mt-0.5 text-[#C44536]" />
               <span>+234 800 123 4567</span>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 mt-0.5 text-[#C08081]" />
+              <MapPin className="w-4 h-4 mt-0.5 text-[#C44536]" />
               <span>123 Eleganza Plaza, Lagos, Nigeria</span>
             </li>
           </ul>
