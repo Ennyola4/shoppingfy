@@ -19,6 +19,9 @@ const Contact = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     /* ================= FAQ STICKY LOGIC ================= */
     const faqRef = useRef<HTMLDivElement | null>(null);
