@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "../utils/product";
 import { Star, ShoppingCart, X } from "lucide-react";
@@ -19,6 +19,9 @@ interface Product {
 }
 
 const ProductDetails = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   const { addItem } = useCart();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedSize, setSelectedSize] = useState<string>("");
@@ -81,11 +84,10 @@ const ProductDetails = () => {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.round(product.rating ?? 4)
+                      className={`w-4 h-4 ${i < Math.round(product.rating ?? 4)
                           ? "text-yellow-400 fill-yellow-400"
                           : "text-gray-300"
-                      }`}
+                        }`}
                     />
                   ))}
                   <span className="text-sm text-gray-400 ml-1">
@@ -98,11 +100,10 @@ const ProductDetails = () => {
                 </p>
 
                 <span
-                  className={`text-sm font-semibold ${
-                    product.status === "In Stock"
+                  className={`text-sm font-semibold ${product.status === "In Stock"
                       ? "text-green-500"
                       : "text-red-500"
-                  }`}
+                    }`}
                 >
                   {product.status ?? "In Stock"}
                 </span>
@@ -179,11 +180,10 @@ const ProductDetails = () => {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
-                          i < Math.round(selectedProduct.rating ?? 4)
+                        className={`w-5 h-5 ${i < Math.round(selectedProduct.rating ?? 4)
                             ? "text-yellow-400 fill-yellow-400"
                             : "text-gray-300"
-                        }`}
+                          }`}
                       />
                     ))}
                     <span className="text-gray-400">
@@ -208,11 +208,10 @@ const ProductDetails = () => {
                             onClick={() => setSelectedSize(size)}
                             whileHover={{ scale: 1.05 }}
                             animate={{ scale: selectedSize === size ? 1.1 : 1 }}
-                            className={`px-3 py-1 border rounded-md font-medium transition-colors ${
-                              selectedSize === size
+                            className={`px-3 py-1 border rounded-md font-medium transition-colors ${selectedSize === size
                                 ? "bg-[#002366] text-white border-[#002366]"
                                 : "bg-white text-gray-700 border-gray-300"
-                            }`}
+                              }`}
                           >
                             {size}
                           </motion.button>
