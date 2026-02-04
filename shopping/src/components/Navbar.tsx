@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ShoppingCart,
   Search,
@@ -19,6 +20,7 @@ const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const { items, setIsCartOpen } = useCart(); // <-- Add setIsCartOpen to open cart drawer
   const cartCount = items.length;
@@ -115,7 +117,7 @@ const Navbar = () => {
               onClick={() => setIsCartOpen(true)} // <-- Open CartDrawer here
             >
               <motion.div
-                key={cartCount} 
+                key={cartCount}
                 initial={{ scale: 1 }}
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 0.3 }}
@@ -141,9 +143,17 @@ const Navbar = () => {
               <User className="cursor-pointer" />
               <div className="absolute right-0 mt-2 w-36 text-gray-200 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <ul className="flex flex-col bg-[#002366] p-2 text-sm rounded-md">
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">My Profile</li>
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Orders</li>
-                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded">Logout</li>
+                  <li
+                    onClick={() => {
+                      navigate('/profile');
+                    }}
+                    className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">My Profile</li>
+                  <li
+                    onClick={() => {
+                      navigate('/wishlist');
+                    }}
+                   className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">Wish list</li>
+                  <li className="hover:bg-white hover:text-[#002366] px-3 py-1 rounded cursor-pointer">Logout</li>
                 </ul>
               </div>
             </div>
@@ -192,16 +202,40 @@ const Navbar = () => {
               </div>
 
               <div className="border-t border-white/20 pt-5 space-y-4 text-sm">
-                <motion.div whileHover={{ x: 4 }} className="flex items-center gap-3 cursor-pointer">
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  onClick={() => {
+                    navigate("/profile");
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
                   <User size={18} /> Profile
                 </motion.div>
-                <motion.div whileHover={{ x: 4 }} className="flex items-center gap-3 cursor-pointer">
+
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  onClick={() => {
+                    navigate("/wishlist");
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
                   <Heart size={18} /> Wishlist
                 </motion.div>
-                <motion.div whileHover={{ x: 4 }} className="flex items-center gap-3 cursor-pointer">
+
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  onClick={() => {
+                    navigate("/login");
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
                   <LogIn size={18} /> Sign In
                 </motion.div>
               </div>
+
 
               <div className="mt-auto pt-4 border-t border-white/10 text-xs text-center text-gray-200">
                 © {new Date().getFullYear()} Shoppingfy
