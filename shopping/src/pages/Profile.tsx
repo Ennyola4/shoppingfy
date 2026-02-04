@@ -65,8 +65,8 @@ const Profile = () => {
               </h2>
               <p className="text-gray-600">john@example.com</p>
               <Button
-                variant="outline"
-                className="mt-4 border-[#002366] text-[#002366]"
+                variant="default"
+                className="mt-4 shadow-sm text-[#002366] cursor-pointer bg-white hover:bg-gray-100"
               >
                 Edit Profile
               </Button>
@@ -87,7 +87,7 @@ const Profile = () => {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex items-center gap-4 p-4 border rounded-xl">
+            <div className="flex items-center gap-4 p-4 shadow-sm border border-gray-200 rounded-xl">
               <User className="text-gray-400" />
               <div>
                 <p className="text-sm text-gray-500">Full Name</p>
@@ -97,7 +97,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 border rounded-xl">
+            <div className="flex items-center gap-4 p-4 shadow-sm border border-gray-200 rounded-xl">
               <Mail className="text-gray-400" />
               <div>
                 <p className="text-sm text-gray-500">Email</p>
@@ -107,7 +107,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 border rounded-xl">
+            <div className="flex items-center gap-4 p-4 shadow-sm border border-gray-200 rounded-xl">
               <Phone className="text-gray-400" />
               <div>
                 <p className="text-sm text-gray-500">Phone</p>
@@ -117,7 +117,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 border rounded-xl">
+            <div className="flex items-center gap-4 p-4 shadow-sm border border-gray-200 rounded-xl">
               <Settings className="text-gray-400" />
               <div>
                 <p className="text-sm text-gray-500">
@@ -143,7 +143,7 @@ const Profile = () => {
             Security
           </h3>
 
-          <div className="flex items-center justify-between p-4 border rounded-xl">
+          <div className="flex items-center justify-between p-4 shadow-sm border border-gray-200 rounded-xl">
             <div className="flex items-center gap-4">
               <Lock className="text-gray-400" />
               <div>
@@ -155,7 +155,7 @@ const Profile = () => {
                 </p>
               </div>
             </div>
-            <Button variant="outline">Change</Button>
+            <Button className="cursor-pointer" variant="outline">Change</Button>
           </div>
         </motion.div>
       </section>

@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Promotion from './pages/Promotion';
 import Profile from './pages/Profile';
 import WishList from './pages/WishList';
+import Pages from './pages/Pages';
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
         <Route path='/promotion' element={<Promotion />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/wishlist' element={<WishList />} />
+        <Route path='/pages' element={<Pages />} />
+
 
 
 
