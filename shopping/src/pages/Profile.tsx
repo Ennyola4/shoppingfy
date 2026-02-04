@@ -8,8 +8,13 @@ import {
   Camera,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Profile = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4">
       {/* ================= HERO ================= */}
