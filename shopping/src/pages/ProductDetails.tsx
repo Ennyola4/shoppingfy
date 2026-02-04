@@ -101,7 +101,7 @@ const ProductDetails = () => {
             {/* Add to cart */}
             <button
               onClick={() => handleAddToCart(product)}
-              className="m-4 mt-0 flex items-center justify-center gap-2 bg-[#C08081] text-white py-2 rounded-md hover:opacity-90 transition"
+              className="m-4 mt-0 flex items-center cursor-pointer justify-center gap-2 text-[#C44536] border border-[#C44536] hover:bg-[#C44536]/10 py-2 rounded-md hover:opacity-90 transition"
             >
               <ShoppingCart size={16} />
               Add to Cart

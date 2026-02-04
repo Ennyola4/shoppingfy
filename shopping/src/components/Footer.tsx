@@ -41,28 +41,28 @@ const Footer = () => {
               whileHover={{ scale: 1.2 }}
               className="p-2 rounded-full hover:bg-white/20 transition"
             >
-              <Facebook className="w-6 h-6 text-[#C08081] hover:text-blue-500 " />
+              <Facebook className="w-6 h-6 text-[#C44536] hover:text-blue-500 " />
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
               className="p-2  rounded-full hover:bg-white/20 transition"
             >
-              <Twitter className="w-6 h-6 text-[#C08081] hover:text-blue-300" />
+              <Twitter className="w-6 h-6 text-[#C44536] hover:text-blue-300" />
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
               className="p-2 rounded-full hover:bg-white/20 transition"
             >
-              <Instagram className="w-6 h-6 text-[#C08081] hover:text-yellow-600" />
+              <Instagram className="w-6 h-6 text-[#C44536] hover:text-yellow-600" />
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
               className="p-2  rounded-full hover:bg-white/20 transition"
             >
-              <Youtube className="w-6 h-6 text-[#C08081] hover:text-red-500" />
+              <Youtube className="w-6 h-6 text-[#C44536] hover:text-red-500" />
             </motion.a>
           </div>
         </motion.div>

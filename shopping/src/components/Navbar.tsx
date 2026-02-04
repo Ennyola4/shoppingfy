@@ -55,7 +55,7 @@ const Navbar = () => {
 
   const baseTextColor = isHomePage && !scrolled ? "text-white" : "text-white";
   const iconHoverBg = isHomePage && !scrolled ? "hover:bg-white/20" : "hover:bg-gray-200";
-  const navBg = isHomePage ? (scrolled ? "bg-[#C08081]/90" : "bg-transparent") : "bg-[#C08081]/90";
+  const navBg = isHomePage ? (scrolled ? "bg-[#C44536]" : "bg-transparent") : "bg-[#C44536]/90";
 
   return (
     <nav className={`fixed w-full top-0 z-50 transition-all duration-500 font-serif ${navBg}`}>
@@ -174,7 +174,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 100, damping: 18 }}
-              className="fixed inset-y-0 right-0 w-64 bg-[#C08081] text-white shadow-xl md:hidden flex flex-col p-6 space-y-6 z-[60]"
+              className="fixed inset-y-0 right-0 w-64 bg-[#C44536] text-white shadow-xl md:hidden flex flex-col p-6 space-y-6 z-[60]"
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-bold">Menu</h2>

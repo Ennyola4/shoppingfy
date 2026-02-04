@@ -52,11 +52,11 @@ export function CartDrawer() {
                             {/* Header */}
                             <div className="flex justify-between items-center p-4 border-b border-gray-300 shadow-sm">
                                 <h2 className="text-sm font-semibold">
-                                    You have <span className="text-sm">{items.length} {items.length === 1 ? 'item' : 'items'} in the bag</span>
+                                    You have <span className="text-sm text-[#C44536]">{items.length}</span> {items.length === 1 ? 'item' : 'items'} in the bag
                                 </h2>
                                 <button
                                     onClick={() => setIsCartOpen(false)}
-                                    className="text-gray-500 hover:text-gray-700 transition"
+                                    className="text-gray-500 hover:text-gray-700 transition cursor-pointer"
                                 >
                                     <X size={20} />
                                 </button>
@@ -147,7 +147,7 @@ export function CartDrawer() {
                                         Shipping and taxes calculated at checkout
                                     </p>
 
-                                    <Button className="w-full bg-[#C08081]/70 hover:bg-[#C08081] text-white transition-all duration-500" asChild>
+                                    <Button className="w-full bg-[#C44536]/60 hover:bg-[#C44536] text-white transition-all duration-500 cursor-pointer" asChild>
                                         <Link to="/checkout" onClick={() => setIsCartOpen(false)}>
                                             <CircleCheck className="w-4 h-4 mr-2" />
                                             Proceed to Checkout
@@ -156,7 +156,7 @@ export function CartDrawer() {
 
                                     <Button
                                         variant="outline"
-                                        className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 transition-all duration-500"
+                                        className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 transition-all duration-500 cursor-pointer"
                                         onClick={() => setIsCartOpen(false)}
                                         asChild
                                     >

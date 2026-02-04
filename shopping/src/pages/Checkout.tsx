@@ -177,7 +177,7 @@ const Checkout = () => {
                         </div>
                         <Button
                             type="submit"
-                            className={`bg-[#002366] text-white py-3 rounded-md mt-4 hover:bg-[#0E0C60] ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                            className={`bg-[#C44536]/80 cursor-pointer text-white py-3 rounded-md mt-4 hover:bg-[#C44536] ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                                 }`}
                             disabled={isSubmitting}
                         >
@@ -199,12 +199,12 @@ const Checkout = () => {
                             <p className="text-gray-500"></p>
                         ) : items.length === 1 ? (
                             <span className="flex items-center mt-2">
-                                <p className="text-gray-500 text-[10px]">This is the item you picked.</p>
+                                <p className="text-gray-500 text-[10px]">This is the item in your bag.</p>
                                 <CircleCheck className="inline-block ml-1 text-green-600 w-3 h-3 " />
                             </span>
                         ) : (
                             <span className="flex items-center mt-2">
-                                <p className="text-gray-500 text-[10px]">These are the items you picked.</p>
+                                <p className="text-gray-500 text-[10px]">These are the items in your bag.</p>
                                 <CircleCheck className="inline-block ml-1 text-green-500 w-3 h-3 " />
                             </span>
                         )}
