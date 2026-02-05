@@ -14,8 +14,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 2,
@@ -32,8 +32,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-      sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+      sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 3,
@@ -50,8 +50,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 4,
@@ -68,8 +68,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 5,
@@ -86,8 +86,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 6,
@@ -104,8 +104,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 7,
@@ -122,8 +122,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-    sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+    sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 8,
@@ -140,8 +140,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"],
+    colors: ["Black", "Brown"],
   },
   {
     id: 9,
@@ -158,8 +158,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"], 
+    colors: ["Black", "Brown"],
   },
   {
     id: 10,
@@ -176,8 +176,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     status: "In Stock",
-     sizes: ["38", "39", "40", "41", "42"], // ✅ added sizes
-    colors: ["Black", "Brown", "White"],
+     sizes: ["38", "39", "40", "41", "42"], 
+    colors: ["Black", "Brown"],
   },
 ];
 
