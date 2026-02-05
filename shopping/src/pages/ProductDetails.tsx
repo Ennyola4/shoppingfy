@@ -64,8 +64,8 @@ const ProductDetails = () => {
     selectedProduct?.images && selectedProduct.images.length > 0
       ? selectedProduct.images
       : selectedProduct
-      ? [selectedProduct.image]
-      : [];
+        ? [selectedProduct.image]
+        : [];
 
   return (
     <section className="py-10 px-5 md:px-16 mt-8">
@@ -102,11 +102,10 @@ const ProductDetails = () => {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.round(product.rating ?? 4)
-                          ? "text-yellow-400 fill-yellow-400"
-                          : "text-gray-300"
-                      }`}
+                      className={`w-4 h-4 ${i < Math.round(product.rating ?? 4)
+                        ? "text-yellow-400 fill-yellow-400"
+                        : "text-gray-300"
+                        }`}
                     />
                   ))}
                   <span className="text-sm text-gray-400 ml-1">
@@ -135,126 +134,92 @@ const ProductDetails = () => {
         ))}
       </div>
 
+
       {/* MODAL */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-2xl max-w-3xl w-full overflow-hidden relative"
-              initial={{ scale: 0.9, opacity: 0 }}
+              className="
+          bg-white w-full max-w-4xl rounded-xl 
+          overflow-hidden shadow-xl
+          max-h-[90vh] flex flex-col
+        "
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.95, opacity: 0 }}
             >
-              <button
-                onClick={handleCloseModal}
-                className="absolute top-4 right-4 text-gray-600"
-              >
-                <X size={24} />
-              </button>
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b">
+                <h2 className="text-lg md:text-xl font-semibold text-[#002366]">
+                  {selectedProduct.name}
+                </h2>
+                <button onClick={handleCloseModal}>
+                  <X className="text-gray-600 hover:text-black" />
+                </button>
+              </div>
 
-              <div className="md:flex">
-                {/* IMAGE SLIDER */}
-                <div className="md:w-1/2 relative overflow-hidden bg-gray-100">
-                  <motion.div
-                    className="flex"
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    animate={{ x: `-${activeImageIndex * 100}%` }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    onDragEnd={(_, info) => {
-                      if (
-                        info.offset.x < -50 &&
-                        activeImageIndex < images.length - 1
-                      ) {
-                        setActiveImageIndex((prev) => prev + 1);
-                      }
-                      if (info.offset.x > 50 && activeImageIndex > 0) {
-                        setActiveImageIndex((prev) => prev - 1);
-                      }
-                    }}
-                    style={{ width: `${images.length * 100}%` }}
-                  >
-                    {images.map((img, idx) => (
-                      <div key={idx} className="w-full flex-shrink-0">
-                        <img
-                          src={img}
-                          alt={selectedProduct.name}
-                          className="w-fit h-96 object-cover"
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
 
-                  {/* Arrows */}
-                  {activeImageIndex > 0 && (
-                    <button
-                      onClick={() =>
-                        setActiveImageIndex((prev) => prev - 1)
-                      }
-                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-1 rounded-full"
-                    >
-                      ‹
-                    </button>
+              {/* Body */}
+              <div className="flex-1 overflow-y-auto md:grid md:grid-cols-2">
+                {/* Image */}
+                <div className="bg-gray-100">
+                  <img
+                    src={images[activeImageIndex]}
+                    alt={selectedProduct.name}
+                    className="w-full h-72 md:h-full object-cover"
+                  />
+
+                  {/* Thumbnails */}
+                  {images.length > 1 && (
+                    <div className="flex gap-2 p-3 overflow-x-auto">
+                      {images.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveImageIndex(i)}
+                          className={`border rounded-md ${activeImageIndex === i
+                            ? "border-[#002366]"
+                            : "border-transparent"
+                            }`}
+                        >
+                          <img
+                            src={img}
+                            className="w-16 h-16 object-cover rounded-md"
+                          />
+                        </button>
+                      ))}
+                    </div>
                   )}
-                  {activeImageIndex < images.length - 1 && (
-                    <button
-                      onClick={() =>
-                        setActiveImageIndex((prev) => prev + 1)
-                      }
-                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-1 rounded-full"
-                    >
-                      ›
-                    </button>
-                  )}
-
-                  {/* Dots */}
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                    {images.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          i === activeImageIndex
-                            ? "bg-[#002366]"
-                            : "bg-white/60"
-                        }`}
-                      />
-                    ))}
-                  </div>
                 </div>
 
-                {/* INFO */}
-                <div className="md:w-1/2 p-6 flex flex-col">
-                  <h2 className="text-2xl font-bold text-[#002366]">
-                    {selectedProduct.name}
-                  </h2>
-
-                  <p className="text-xl font-bold text-[#002366] my-3">
+                {/* Info */}
+                <div className=" p-8 space-y-9 shadow-sm m-8 border border-gray-200 rounded-lg
+  md:sticky md:top-6 md:self-start bg-gray-100">
+                  <h2 className="text-2xl font-bold text-[#002366] mb-2"> {selectedProduct.name} </h2>
+                  <p className="text-2xl font-bold text-[#002366]">
                     ₦{selectedProduct.price.toLocaleString()}
                   </p>
 
-                  {/* <p className="text-gray-600 mb-4">
-                    {selectedProduct.description}
-                  </p> */}
+                  <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
 
-                  {/* SIZE */}
+                  {/* Size */}
                   {selectedProduct.sizes && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold mb-2">Select Size</h4>
+                    <div>
+                      <p className="font-medium mb-2">Size</p>
                       <div className="flex gap-2 flex-wrap">
                         {selectedProduct.sizes.map((size) => (
                           <button
                             key={size}
                             onClick={() => setSelectedSize(size)}
-                            className={`px-2 text-[10px] py-1 border rounded-md ${
-                              selectedSize === size
-                                ? "bg-[#002366] text-white"
-                                : "bg-white"
-                            }`}
+                            className={`px-4 py-2 text-sm rounded-md border transition  ${selectedSize === size
+                              ? "bg-[#002366] text-white border-[#002366]"
+                              : "border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                              }`}
                           >
                             {size}
                           </button>
@@ -263,39 +228,39 @@ const ProductDetails = () => {
                     </div>
                   )}
 
-                  {/* COLOR */}
+                  {/* Color */}
                   {selectedProduct.colors && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-2">Select Color</h4>
+                    <div>
+                      <p className="font-medium mb-2">Color</p>
                       <div className="flex gap-3">
                         {selectedProduct.colors.map((color) => (
                           <button
                             key={color}
                             onClick={() => setSelectedColor(color)}
-                            className={`w-7 h-7 rounded-full border-2 ${
-                              selectedColor === color
-                                ? "border-black"
-                                : "border-gray-300"
-                            }`}
+                            className={`w-8 h-8 rounded-full border-2 transition ${selectedColor === color
+                              ? "border-black scale-110"
+                              : "border-gray-300"
+                              }`}
                             style={{ backgroundColor: color.toLowerCase() }}
                           />
                         ))}
                       </div>
                     </div>
                   )}
-
-                  <button
-                    onClick={handleAddToCart}
-                    className=" mt-auto bg-[#C44536] text-white py-3 rounded-md hover:bg-[#A33428]"
-                  >
-                    Add to Cart
-                  </button>
                 </div>
               </div>
+
+              {/* Footer */}
+          <div className="flex items-center justify-center">
+                <div className=" p-4">
+               <button onClick={handleAddToCart} className="mt-auto bg-[#C44536] text-white py-3 px-8 rounded-md hover:bg-[#A33428] flex items-center justify-center gap-2 cursor-pointer" > <ShoppingCart size={18} /> Add to Cart </button>
+              </div>
+          </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </section>
   );
 };
