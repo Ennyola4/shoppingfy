@@ -1,6 +1,7 @@
 // src/contexts/CartContext.tsx
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 import { type CartItem } from "../contexts/cart.types";
+import { toast } from "react-hot-toast";
 
 interface CartContextType {
   items: CartItem[];
@@ -57,8 +58,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
       return [...prev, newItem];
     });
-
-    setIsCartOpen(true);
+    toast.success("Item added to cart!");
+    setIsCartOpen(false);
   };
 
   // Remove item from cart
@@ -73,6 +74,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           )
       )
     );
+    toast.error("Item removed from cart!");
   };
 
   // Update quantity of an item
@@ -87,8 +89,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setItems((prev) =>
       prev.map((item) =>
         item.product.id === productId &&
-        item.size === size &&
-        item.color === color
+          item.size === size &&
+          item.color === color
           ? { ...item, quantity }
           : item
       )

@@ -66,7 +66,7 @@ export function CartDrawer() {
                             <div className="flex-1 overflow-y-auto p-4 space-y-4 mt-8"style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e100 transparent' }}>
                                 {items.length === 0 ? (
                                     <div className="flex flex-col items-center justify-center text-center mt-10">
-                                        <ShoppingBag className="h-16 w-16 text-[#C44536]/50 mb-4" />
+                                        <ShoppingBag className="h-16 w-16 text-[#C44536]/50 mb-4 animate-bounce" />
                                         <h3 className="text-lg font-medium mb-2">Your bag is empty</h3>
                                         <p className="text-sm text-gray-500 mb-6">
                                             Discover our handcrafted collection and find your perfect items.

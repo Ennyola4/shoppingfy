@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { motion } from "framer-motion";
-import { Trash2, Minus, Plus, ShoppingBag, CircleCheck } from "lucide-react";
+import { Trash2, Minus, Plus,  CircleCheck,  ShoppingBasket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-hot-toast";
 
@@ -72,12 +72,12 @@ const Checkout = () => {
                             <p className="text-gray-500"></p>
                         ) : items.length === 1 ? (
                             <span className="flex items-center mt-2">
-                                <p className="text-gray-500 text-[10px]">This is the item in your bag.</p>
+                                <p className="text-gray-500 text-[12px]">This is the item in your bag.</p>
                                 <CircleCheck className="inline-block ml-1 text-green-600 w-3 h-3 " />
                             </span>
                         ) : (
                             <span className="flex items-center mt-2">
-                                <p className="text-gray-500 text-[10px]">These are the items in your bag.</p>
+                                <p className="text-gray-500 text-[12px]">These are the items in your bag.</p>
                                 <CircleCheck className="inline-block ml-1 text-green-500 w-3 h-3 " />
                             </span>
                         )}
@@ -88,7 +88,7 @@ const Checkout = () => {
                          style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e100 transparent' }}>
                         {items.length === 0 ? (
                             <div className="flex flex-col items-center justify-center h-full min-h-[200px]">
-                                <ShoppingBag className="h-16 w-16 mb-4 text-[#C08081]/20" />
+                                <ShoppingBasket className="h-16 w-16 mb-4 text-[#C08081]/60 animate-bounce" />
                                 <p className="text-gray-500 text-center">Your cart is empty.</p>
                             </div>
                         ) : (
