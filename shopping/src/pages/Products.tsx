@@ -9,7 +9,7 @@ const Products = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20  font-serif">
+        <section className="py-10 px-5 sm:px-8 md:px-12 lg:px-20  font-serif mt-10">
             {/* Header */}
             <div className="flex justify-between items-center mb-10 flex-col md:flex-row gap-6">
                 <span className="text-left">

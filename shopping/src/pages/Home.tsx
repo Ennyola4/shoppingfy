@@ -8,7 +8,7 @@ import HeadlineTicker from "../components/HeadlineSticker"
 import HomePage from "../components/HomePage"
 import SecondDisplay from "../components/SecondDisplay"
 import Trust from "../components/Trust"
-import Products from "./Products"
+import ProductDetails from "./ProductDetails"
 
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
             <HomePage />
             <HeadlineTicker />
             <Trust />
-            <Products />
+            <ProductDetails />
             <About />
             <Display />
             <Categories />

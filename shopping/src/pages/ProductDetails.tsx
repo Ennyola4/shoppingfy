@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "../utils/product";
-import { Star, ShoppingCart, X } from "lucide-react";
+import { Star, ShoppingCart } from "lucide-react";
 import { useCart } from "../contexts/CartContext";
 
 interface Product {
@@ -139,7 +139,7 @@ const ProductDetails = () => {
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-3"
+            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-1" style={{ scrollbarWidth: 'thin', scrollbarColor: '#011e41c5 transparent' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -155,14 +155,14 @@ const ProductDetails = () => {
               exit={{ scale: 0.95, opacity: 0 }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b">
+              {/* <div className="flex items-center justify-between px-6 py-4 border-b">
                 <h2 className="text-lg md:text-xl font-semibold text-[#002366]">
                   {selectedProduct.name}
                 </h2>
                 <button onClick={handleCloseModal}>
                   <X className="text-gray-600 hover:text-black" />
                 </button>
-              </div>
+              </div> */}
 
 
               {/* Body */}
@@ -177,12 +177,12 @@ const ProductDetails = () => {
 
                   {/* Thumbnails */}
                   {images.length > 1 && (
-                    <div className="flex gap-2 p-3 overflow-x-auto">
+                    <div className="flex gap-2 p-3 overflow-x-auto shadow-lg">
                       {images.map((img, i) => (
                         <button
                           key={i}
                           onClick={() => setActiveImageIndex(i)}
-                          className={`border rounded-md ${activeImageIndex === i
+                          className={`border  rounded-md ${activeImageIndex === i
                             ? "border-[#002366]"
                             : "border-transparent"
                             }`}
@@ -198,8 +198,8 @@ const ProductDetails = () => {
                 </div>
 
                 {/* Info */}
-                <div className=" p-8 space-y-9 shadow-sm m-8 border border-gray-200 rounded-lg
-  md:sticky md:top-6 md:self-start bg-gray-100">
+                <div className=" p-8 space-y-9 shadow-sm m-8  mt-8 border border-gray-200 rounded-lg
+  md:sticky md:top-15 md:self-start bg-gray-100">
                   <h2 className="text-2xl font-bold text-[#002366] mb-2"> {selectedProduct.name} </h2>
                   <p className="text-2xl font-bold text-[#002366]">
                     ₦{selectedProduct.price.toLocaleString()}
@@ -253,7 +253,7 @@ const ProductDetails = () => {
               {/* Footer */}
           <div className="flex items-center justify-center">
                 <div className=" p-4">
-               <button onClick={handleAddToCart} className="mt-auto bg-[#C44536] text-white py-3 px-8 rounded-md hover:bg-[#A33428] flex items-center justify-center gap-2 cursor-pointer" > <ShoppingCart size={18} /> Add to Cart </button>
+               <button onClick={handleAddToCart} className="mt-auto text-[#A33428 border border-[#A33428 py-3 px-8 rounded-md hover:bg-[#A33428] hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer" > <ShoppingCart size={18} /> Add to Cart </button>
               </div>
           </div>
             </motion.div>
