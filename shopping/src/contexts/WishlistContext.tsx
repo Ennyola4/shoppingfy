@@ -49,7 +49,7 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
   // ✅ REMOVE ITEM (THIS FIXES YOUR ERROR)
   const removeItem = (id: number) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
-    toast.success("Removed from wishlist");
+    toast.error("Removed from wishlist");
   };
 
   const clearWishlist = () => {
