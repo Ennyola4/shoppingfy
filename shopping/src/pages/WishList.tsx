@@ -6,8 +6,6 @@ import { useWishlist } from "../contexts/WishListContext";
 
 const WishList = () => {
   const { items, removeItem } = useWishlist();
-
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

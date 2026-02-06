@@ -12,7 +12,7 @@ import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import Promotion from './pages/Promotion';
 import Profile from './pages/Profile';
-import WishList from './pages/WishList';
+// import WishList from './pages/WishList';
 import Pages from './pages/Pages';
 import { Toaster } from 'react-hot-toast';
 import { WishlistProvider } from './contexts/WishListContext';
@@ -34,7 +34,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/promotion' element={<Promotion />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/wishlist' element={<WishList />} />
+          {/* <Route path='/wishlist' element={<WishList />} /> */}
           <Route path='/pages' element={<Pages />} />
         </Routes>
       </WishlistProvider>
