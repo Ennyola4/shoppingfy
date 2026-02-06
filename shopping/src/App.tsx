@@ -15,7 +15,7 @@ import Profile from './pages/Profile';
 import WishList from './pages/WishList';
 import Pages from './pages/Pages';
 import { Toaster } from 'react-hot-toast';
-import { WishlistProvider } from './contexts/WishListContext';
+import { WishlistProvider } from './contexts/WishlistContext';
 
 const App = () => {
   return (

@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { Heart, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
-import { useWishlist } from "../contexts/WishListContext";
+import { useWishlist } from "../contexts/WishlistContext";
 
 const WishList = () => {
   const { items, removeItem } = useWishlist();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4">

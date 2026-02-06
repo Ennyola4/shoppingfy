@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { products } from "../utils/product";
 import { Star, ShoppingCart, Heart } from "lucide-react";
 import { useCart } from "../contexts/CartContext";
-import { useWishlist } from "../contexts/WishListContext";
+import { useWishlist } from "../contexts/WishlistContext";
 // import { toast } from "react-hot-toast";
 
 
