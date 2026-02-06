@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "../utils/product";
-import { Star, ShoppingCart } from "lucide-react";
+import { Star, ShoppingCart, Heart } from "lucide-react";
 import { useCart } from "../contexts/CartContext";
+import { useWishlist } from "../contexts/WishListContext";
+// import { toast } from "react-hot-toast";
+
 
 interface Product {
   id: number;
@@ -20,6 +23,7 @@ interface Product {
 
 const ProductDetails = () => {
   const { addItem } = useCart();
+const { addItem: addToWishlist } = useWishlist();
 
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedSize, setSelectedSize] = useState("");
@@ -59,6 +63,20 @@ const ProductDetails = () => {
 
     handleCloseModal();
   };
+
+const handleAddToWishlist = () => {
+  if (!selectedProduct) return;
+
+  addToWishlist({
+    id: selectedProduct.id,
+    name: selectedProduct.name,
+    price: selectedProduct.price,
+    image: selectedProduct.image,
+  });
+handleCloseModal()
+ 
+};
+
 
   const images =
     selectedProduct?.images && selectedProduct.images.length > 0
@@ -154,17 +172,6 @@ const ProductDetails = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
             >
-              {/* Header */}
-              {/* <div className="flex items-center justify-between px-6 py-4 border-b">
-                <h2 className="text-lg md:text-xl font-semibold text-[#002366]">
-                  {selectedProduct.name}
-                </h2>
-                <button onClick={handleCloseModal}>
-                  <X className="text-gray-600 hover:text-black" />
-                </button>
-              </div> */}
-
-
               {/* Body */}
               <div className="flex-1 overflow-y-auto md:grid md:grid-cols-2">
                 {/* Image */}
@@ -251,11 +258,15 @@ const ProductDetails = () => {
               </div>
 
               {/* Footer */}
-          <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center flex-col lg:flex-row">
                 <div className=" p-4">
-               <button onClick={handleAddToCart} className="mt-auto text-[#A33428 border border-[#A33428 py-3 px-8 rounded-md hover:bg-[#A33428] hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer" > <ShoppingCart size={18} /> Add to Cart </button>
+                  <button onClick={handleAddToCart} className="mt-auto text-[#A33428] shadow-sm border border-gray-200 py-2 px-12 rounded-md hover:bg-[#A33428] hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer" > <ShoppingCart size={18} /> Add to Cart </button>
+                </div>
+                
+                <div className=" p-4">
+                  <button onClick={handleAddToWishlist} className="mt-auto text-[#A33428] shadow-sm border border-gray-200 py-2 px-12 rounded-md hover:bg-[#A33428] hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer" > <Heart size={18} /> Add to WishList </button>
+                </div>
               </div>
-          </div>
             </motion.div>
           </motion.div>
         )}

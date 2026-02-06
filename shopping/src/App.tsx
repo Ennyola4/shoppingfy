@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import WishList from './pages/WishList';
 import Pages from './pages/Pages';
 import { Toaster } from 'react-hot-toast';
+import { WishlistProvider } from './contexts/WishListContext';
 
 const App = () => {
   return (
@@ -22,24 +23,21 @@ const App = () => {
       <CartDrawer />
       <Navbar />
       <Toaster position="top-right" reverseOrder={false} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/shop' element={<Shop />} />
-        <Route path='/our-blog' element={<OurBlog />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/product" element={<Products />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/promotion' element={<Promotion />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/wishlist' element={<WishList />} />
-        <Route path='/pages' element={<Pages />} />
-
-
-
-
-
-      </Routes>
+      <WishlistProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/our-blog' element={<OurBlog />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/promotion' element={<Promotion />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/wishlist' element={<WishList />} />
+          <Route path='/pages' element={<Pages />} />
+        </Routes>
+      </WishlistProvider>
       <Footer />
     </CartProvider>
   );

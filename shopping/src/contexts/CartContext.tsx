@@ -44,9 +44,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const existing = prev.find(
         (item) =>
           item.product.id === newItem.product.id &&
-          item.size === newItem.size &&
-          item.color === newItem.color
+        item.size === newItem.size &&
+        item.color === newItem.color
       );
+      
 
       if (existing) {
         return prev.map((item) =>
@@ -95,6 +96,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           : item
       )
     );
+    toast.success("Item quantity updated!");
   };
 
   // Total price
