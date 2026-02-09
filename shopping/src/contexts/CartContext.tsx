@@ -47,16 +47,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         item.size === newItem.size &&
         item.color === newItem.color
       );
-      
-
       if (existing) {
         return prev.map((item) =>
           item === existing
-            ? { ...item, quantity: item.quantity + newItem.quantity }
-            : item
-        );
-      }
-
+        ? { ...item, quantity: item.quantity + newItem.quantity }
+        : item
+      );
+    }
       return [...prev, newItem];
     });
     toast.success("Item added to cart!");

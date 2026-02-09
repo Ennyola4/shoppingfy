@@ -72,6 +72,8 @@ const handleAddToWishlist = () => {
     name: selectedProduct.name,
     price: selectedProduct.price,
     image: selectedProduct.image,
+    
+   
   });
 handleCloseModal()
  

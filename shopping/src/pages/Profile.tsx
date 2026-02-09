@@ -47,9 +47,12 @@ const Profile = () => {
           transition={{ delay: 0.3 }}
           className="bg-white rounded-2xl shadow-lg p-8"
         >
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-8" style={{
+            backgroundImage:
+              "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')", objectFit: "cover"
+          }} >
             {/* Avatar */}
-            <div className="relative">
+            <div className="relative" >
               <div className="w-28 h-28 rounded-full bg-[#002366]/10 flex items-center justify-center">
                 <User className="w-12 h-12 text-[#002366]" />
               </div>

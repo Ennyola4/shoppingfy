@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Facebook, Instagram, Youtube,  Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className=" bg-cover text-gray-200 pt-16 pb-8 px-6 md:px-12 lg:px-20 relative overflow-hidden font-serif" style={{
-          backgroundImage:
-            "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",
-        }}>
-                  <div className="absolute inset-0 bg-black/80"></div>
+      backgroundImage:
+        "url('https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg')",
+    }}>
+      <div className="absolute inset-0 bg-black/80"></div>
 
       {/* Animated background shapes */}
       <motion.div
@@ -35,35 +35,38 @@ const Footer = () => {
           <p className="text-gray-300 text-sm leading-relaxed mb-4">
             Discover fashion, electronics, and lifestyle essentials curated to make your everyday extraordinary.
           </p>
-          <div className="flex space-x-4">
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2 }}
-              className="p-2 rounded-full hover:bg-white/20 transition"
-            >
-              <Facebook className="w-6 h-6 text-[#C44536] hover:text-blue-500 " />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2 }}
-              className="p-2  rounded-full hover:bg-white/20 transition"
-            >
-              <Twitter className="w-6 h-6 text-[#C44536] hover:text-blue-300" />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2 }}
-              className="p-2 rounded-full hover:bg-white/20 transition"
-            >
-              <Instagram className="w-6 h-6 text-[#C44536] hover:text-yellow-600" />
-            </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.2 }}
-              className="p-2  rounded-full hover:bg-white/20 transition"
-            >
-              <Youtube className="w-6 h-6 text-[#C44536] hover:text-red-500" />
-            </motion.a>
+          <div>
+            <div className="flex space-x-4">
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.2 }}
+                className="p-2 rounded-full hover:bg-white/20 transition"
+              >
+                <Facebook className="w-6 h-6 text-[#C44536] hover:text-blue-500 " />
+              </motion.a>
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.2 }}
+                className="p-2  rounded-full hover:bg-white/20 transition"
+              >
+                <Twitter className="w-6 h-6 text-[#C44536] hover:text-blue-300" />
+              </motion.a>
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.2 }}
+                className="p-2 rounded-full hover:bg-white/20 transition"
+              >
+                <Instagram className="w-6 h-6 text-[#C44536] hover:text-yellow-600" />
+              </motion.a>
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.2 }}
+                className="p-2  rounded-full hover:bg-white/20 transition"
+              >
+                <Youtube className="w-6 h-6 text-[#C44536] hover:text-red-500" />
+              </motion.a>
+            </div>
+           
           </div>
         </motion.div>
 
@@ -142,7 +145,7 @@ const Footer = () => {
       {/* Bottom section */}
       <div className="text-center text-gray-400 text-sm relative z-10">
         <p>
-          © {new Date().getFullYear()} <span className="font-semibold text-white">Shoppingfy</span>.  
+          © {new Date().getFullYear()} <span className="font-semibold text-white">Shoppingfy</span>.
           All rights reserved.
         </p>
       </div>

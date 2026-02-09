@@ -22,7 +22,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { items, setIsCartOpen } = useCart(); // <-- Add setIsCartOpen to open cart drawer
+  const { items, setIsCartOpen } = useCart(); 
   const cartCount = items.length;
 
   const isHomePage = location.pathname === "/";
@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className={`flex items-center gap-4 relative ${baseTextColor}`}>
             {/* Search */}
             <div ref={searchRef} className="relative flex items-center">
-              <button className={`p-2 rounded-full transition-colors ${iconHoverBg}`} onClick={() => setShowSearch(prev => !prev)}>
+              <button className={`p-2 rounded-full transition-colors hover:text-black cursor-pointer ${iconHoverBg}`} onClick={() => setShowSearch(prev => !prev)}>
                 <Search size={20} />
               </button>
 

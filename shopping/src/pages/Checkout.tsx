@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { motion } from "framer-motion";
-import { Trash2, Minus, Plus,  CircleCheck,  ShoppingBasket } from "lucide-react";
+import { Trash2, Minus, Plus, CircleCheck, ShoppingBasket, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-hot-toast";
 
@@ -34,18 +34,18 @@ const Checkout = () => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (items.length === 0) return toast.error("Your cart is empty!");
-    setIsSubmitting(true);
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (items.length === 0) return toast.error("Your cart is empty!");
+        setIsSubmitting(true);
 
-    setTimeout(() => {
-        toast.success("Payment successful! Order placed."); 
-        clearCart();
-        setIsCartOpen(false);
-        navigate("/");
-    }, 1500);
-};
+        setTimeout(() => {
+            toast.success("Payment successful! Order placed.");
+            clearCart();
+            setIsCartOpen(false);
+            navigate("/");
+        }, 1500);
+    };
 
     return (
         <section className="max-w-7xl mx-auto py-10 px-5 sm:px-8 md:px-12 lg:px-20 font-serif mt-8">
@@ -59,7 +59,7 @@ const Checkout = () => {
             </motion.h1>
 
             <div className="flex flex-col lg:flex-row gap-10">
-                              {/* Right: Cart Summary*/}
+                {/* Left: Cart Summary*/}
                 <motion.div
                     className="w-full lg:w-1/3 bg-white border border-gray-200 p-6 rounded-lg shadow-md flex flex-col lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-8rem)]"
                     initial={{ opacity: 0, x: 50 }}
@@ -82,10 +82,10 @@ const Checkout = () => {
                             </span>
                         )}
                     </div>
-                    
+
                     {/* Fixed height container for mobile */}
-                    <div className="flex-1 overflow-y-auto max-h-[400px] md:max-h-none space-y-4 pr-2 mb-4" 
-                         style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e100 transparent' }}>
+                    <div className="flex-1 overflow-y-auto max-h-[400px] md:max-h-none space-y-4 pr-2 mb-4"
+                        style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e100 transparent' }}>
                         {items.length === 0 ? (
                             <div className="flex flex-col items-center justify-center h-full min-h-[200px]">
                                 <ShoppingBasket className="h-16 w-16 mb-4 text-[#C08081]/60 animate-bounce" />
@@ -140,6 +140,14 @@ const Checkout = () => {
 
                     {/* Total */}
                     <div className="mt-6 border-t pt-4">
+                        <span 
+                        onClick={()=>{
+                            navigate("/wishlist")
+                        }}
+                        className="flex items-center mb-2  cursor-pointer">
+                            <Heart className="inline-block mr-2 text-orange-600 w-4 h-4 " />
+                            <p className="text-gray-500 text-[12px] hover:text-blue-500">Visit wishlist.</p>
+                        </span>
                         <div className="flex justify-between font-semibold text-lg items-center">
                             <span>
                                 Total Amount:
@@ -148,7 +156,7 @@ const Checkout = () => {
                         </div>
                     </div>
                 </motion.div>
-                {/* Left: Billing & Payment Form */}
+                {/* Right: Billing & Payment Form */}
                 <motion.div
                     className="flex-1 bg-white p-6 rounded-lg shadow-md space-y-6"
                     initial={{ opacity: 0, x: -50 }}
@@ -276,7 +284,7 @@ const Checkout = () => {
                     </form>
                 </motion.div>
 
-  
+
             </div>
         </section>
     );

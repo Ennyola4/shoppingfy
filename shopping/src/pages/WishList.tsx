@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { useWishlist } from "../contexts/WishlistContext";
 
+
 const WishList = () => {
   const { items, removeItem } = useWishlist();
   useEffect(() => {
@@ -37,6 +38,11 @@ const WishList = () => {
 
       {/* Wishlist Grid */}
       <section className="max-w-7xl mx-auto pb-20">
+        <div className=" items-center text-center p-5 mb-5 ">
+          <h2 className=" font-semibold text-2xl">
+            You have <span className=" text-[#C44536]">{items.length}</span> {items.length === 1 ? 'item' : 'items'} in your wishlist
+          </h2>
+        </div>
         {items.length > 0 && (
           <motion.div
             initial="hidden"

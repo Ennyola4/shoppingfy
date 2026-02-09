@@ -71,7 +71,7 @@ export function CartDrawer() {
                                         <p className="text-sm text-gray-500 mb-6">
                                             Discover our handcrafted collection and find your perfect items.
                                         </p>
-                                        <Button className="px-3 py-2 shadow-sm rounded-sm border border-gray-200 bg-gray-50 hover:bg-gray-200 text-[#C44536]" asChild onClick={() => setIsCartOpen(false)}>
+                                        <Button className="px-3 py-2 shadow-sm rounded-sm border border-gray-200 bg-gray-50 hover:bg-[#C44536] text-[#C44536] hover:text-[white] transition-all duration-600 rounded-md" asChild onClick={() => setIsCartOpen(false)}>
                                             <Link to="/product">Browse Collection</Link>
                                         </Button>
                                     </div>
